@@ -1,13 +1,33 @@
+require('dotenv').config();
+const path = require(`path`)
+
+const siteUrl = process.env.GATSBY_SITE_URL;
+const siteGraphql = process.env.GATSBY_SITE_ADMIN_URL + "/graphql";
+const googleAnalytics = process.env.GATSBY_GOOGLE_ANALYTICS;
+
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "firstassist",
+    siteName: 'firstassist',
+    title: `firstassist`,
+    description: `firstassist`,
+    author: `@Alex`,
+    siteUrl: siteUrl,
+    gSiteVerification: ''
   },
   plugins: [
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        url: "https://api.firstassist.ca",
+        url: siteGraphql,
+        useACF: true,
+        html: {
+          useGatsbyImage: true,
+          createStaticFiles: true,
+          imageMaxWidth: 1500,
+        },
+        develop: {
+          hardCacheMediaFiles: true,
+        },
       },
     },
     "gatsby-plugin-sass",
@@ -23,12 +43,11 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
       },
-      __key: "images",
     },
   ],
 };
