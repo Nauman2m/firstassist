@@ -16,6 +16,23 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google2: [
+            {
+              family: "Fira Sans",
+              axes: "wght@400;500;700",
+            },
+            {
+              family: "PT Sans",
+              axes: "wght@400;700",
+            },
+          ],
+        },
+      },
+    },
+    {
       resolve: "gatsby-source-wordpress",
       options: {
         url: siteGraphql,

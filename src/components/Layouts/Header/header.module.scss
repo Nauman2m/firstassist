@@ -1,0 +1,57 @@
+@import "src/styles/colors";
+@import "src/styles/fonts";
+.header {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex: 1 1;
+  .logoContainer {
+    padding-block: 20px 16px;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+  }
+  .navContainer {
+    display: flex;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+    justify-content: center;
+    align-items: center;
+    ul {
+      position: relative;
+      list-style: none;
+      display: flex;
+      align-items: stretch;
+      flex: 1 auto;
+      flex-wrap: nowrap;
+      height: 100%;
+      li {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        a {
+          font-family: $body-font;
+          font-size: 15px;
+          font-weight: 700;
+          white-space: nowrap;
+          padding-inline: 26px;
+          color: rgb(34, 34, 34);
+          text-decoration: none;
+          height: 100%;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+  .btnContainer {
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
