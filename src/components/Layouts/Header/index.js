@@ -1,4 +1,4 @@
-import { StaticImage } from "gatsby-plugin-image";
+import { Link } from 'gatsby';
 import React from 'react';
 import Button from '../../common/button';
 import * as styles from './header.module.scss';
@@ -77,7 +77,9 @@ const Header = ({path}) => {
         <header>
             <div className={styles.header}>
                 <div className={styles.logoContainer}>
-                    <StaticImage src="../../../images/first-assist-logo.png" alt="first assist logo" loading="eager" placeholder="none" layout="constrained" />
+                    <Link aria-label="logo" to="/">
+                        <img width={230} height={37} src="/images/first-assist-logo.png" alt="Logo" />
+                    </Link>
                 </div>
                 <div className={styles.navContainer}>
                     <ul>

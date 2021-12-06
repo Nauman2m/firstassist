@@ -16,6 +16,11 @@
   },
   "dependencies": {
     "@charlietango/use-window-size": "^1.6.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
     "gatsby": "^4.3.0",
     "gatsby-plugin-google-analytics": "^4.3.0",
     "gatsby-plugin-image": "^2.3.0",
