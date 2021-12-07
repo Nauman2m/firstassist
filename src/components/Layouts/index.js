@@ -8,9 +8,11 @@ const Layouts = ({path, children, title, description}) => {
     return (
         <>
             <Seo title={title} description={description} />
+            <main>
             <Header path={path} />
-            <main>{children}</main>
+                {children}
             <Footer />
+            </main>
         </>
     )
 }

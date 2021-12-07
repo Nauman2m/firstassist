@@ -1,0 +1,69 @@
+@import "src/styles/colors";
+@import "src/styles/bp";
+.HomeHero {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 80px;
+  .particles {
+    z-index: -1;
+    .particlesCanvas {
+      position: absolute !important;
+      height: 100% !important;
+      display: block !important;
+      z-index: -1;
+    }
+  }
+  .HeroContent {
+    position: relative;
+    width: 100%;
+    display: flex;
+    z-index: 2;
+    .Left {
+      width: 43%;
+      padding: 10% 2% 0 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @include xxl {
+        width: 29%;
+        padding: 5% 3% 5% 18%;
+      }
+      h1 {
+        line-height: 1.2em;
+        font-size: 51px;
+        color: #000000;
+        margin-bottom: 0.5em;
+      }
+      .Content {
+        p {
+          width: 85%;
+          margin-bottom: 0.5em;
+        }
+      }
+      .Cta {
+        margin-top: 1.5em;
+        display: flex;
+        .btnContainer {
+          width: 50%;
+          a {
+            display: inline-block;
+            text-transform: uppercase;
+            font-weight: 700;
+          }
+        }
+        .CnContainer {
+          p {
+            color: #000000;
+          }
+          a {
+            text-decoration: none;
+            color: $color-primary;
+          }
+        }
+      }
+    }
+    .Right {
+      width: 50%;
+    }
+  }
+}

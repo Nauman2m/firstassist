@@ -63,7 +63,7 @@ let Menu = [
         "children": []
     },
     {
-        "id": "cG9zdDozODg=",
+        "id": "cG9zdDozOD1=",
         "label": "Join Us",
         "url": "https://firstassist.ca/contact/",
         "parentId": null,
@@ -74,7 +74,7 @@ let Menu = [
 
 const Header = ({path}) => {
     return (
-        <header>
+        <header className={styles.headerContainer}>
             <div className={styles.header}>
                 <div className={styles.logoContainer}>
                     <Link aria-label="logo" to="/">

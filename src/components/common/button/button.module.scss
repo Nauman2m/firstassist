@@ -9,4 +9,9 @@
   letter-spacing: 0.1em;
   border-radius: 50em;
   padding: 14px 30px;
+  transition: all 0.3s;
+  &:hover {
+    transform: translate3d(0, -2px, 0);
+    box-shadow: 0 12px 28px rgb(0 0 0 / 12%);
+  }
 }

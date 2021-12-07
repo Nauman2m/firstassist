@@ -1,8 +1,14 @@
+@import "src/styles/fonts";
+@import "src/styles/colors";
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-family: PT Sans;
+  font-family: $body-font;
+  font-weight: 400;
+  line-height: 1.5em;
+  font-size: 1em;
+  color: $color-font;
 }
 h1,
 h2,
@@ -10,5 +16,24 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Fira Sans;
+  font-family: $heading-font;
+  font-weight: 500;
+}
+main {
+  position: relative;
+}
+.UnderLine {
+  span {
+    position: relative;
+    display: inline-block;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0.275em;
+      bottom: 0.1em;
+      z-index: -1;
+      background-color: rgba(255, 185, 158, 0.5);
+    }
+  }
 }

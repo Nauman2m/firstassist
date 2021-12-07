@@ -1,10 +1,12 @@
 import React from 'react';
 import Layouts from '../components/Layouts';
+import { HomeHero, LogoFlex } from '../components/modules';
 
 const Page = () => {
   return (
     <Layouts path="/" title="Home" description="">
-      <h1>Home</h1>
+      <HomeHero />
+      <LogoFlex />
     </Layouts>
   )
 }

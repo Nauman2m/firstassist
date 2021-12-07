@@ -1,0 +1,20 @@
+.LogoFlex {
+  margin-bottom: 50px;
+  .SectionText {
+    display: flex;
+    justify-content: center;
+    p {
+      text-transform: uppercase;
+      margin-bottom: 3.5em;
+      font-weight: 700;
+    }
+  }
+  .logoContainer {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    .logo {
+      margin-inline: 15px;
+    }
+  }
+}
