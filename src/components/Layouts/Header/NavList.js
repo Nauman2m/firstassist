@@ -19,7 +19,7 @@ const NavList = ({item}) => {
     const MenuItemChildren = (
         <ul className={`${styles.dropdown} ${dropdownOpened ? styles.isOpened : ''}`}>
             {children.map((item, index) => (
-              <NavList item={item} key={`sub-nav-${index}`} />
+              <NavList item={item} key={item.id} />
             ))}
         </ul>
     )
