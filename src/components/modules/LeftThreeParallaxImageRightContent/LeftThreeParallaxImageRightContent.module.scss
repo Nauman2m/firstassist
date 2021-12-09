@@ -1,0 +1,46 @@
+.LeftThreeParallaxImageRightContent {
+  padding-block: 100px 0;
+  .wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    .left {
+      width: 50%;
+      position: relative;
+      .parallaxImage {
+        border-radius: 6px;
+        &:nth-child(1) {
+          position: absolute;
+          top: -13%;
+          right: 0;
+        }
+        &:nth-child(2) {
+          position: absolute;
+          left: -5%;
+        }
+        &:nth-child(3) {
+          margin-top: 35%;
+          right: -20%;
+        }
+      }
+    }
+    .right {
+      width: 41%;
+      margin-left: 9%;
+      h2 {
+        margin-bottom: 0.65em;
+      }
+      .TextHighLight {
+        font-weight: 700;
+        font-size: 22px;
+        margin-bottom: 1.5em;
+      }
+      .Content {
+        p {
+          margin-bottom: 2.5em;
+        }
+      }
+    }
+  }
+}

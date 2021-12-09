@@ -1,3 +1,5 @@
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { StaticImage } from "gatsby-plugin-image";
 import { gsap, TweenLite } from "gsap";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
@@ -78,7 +80,7 @@ const HomeHero = () => {
     }
 
     return (
-        <section className={styles.HomeHero}>
+        <div className={styles.HomeHero}>
             <Particles params={Params} className={styles.particles} canvasClassName={styles.particlesCanvas} />
             <div className={styles.HeroContent}>
                 <div className={styles.Left}>
@@ -102,10 +104,19 @@ const HomeHero = () => {
                     </div>
                 </div>
                 <div className={styles.Right}>
-                    <StaticImage src="../../../images/first-assist-charity-Ottawa.jpeg" alt="first assist charity Ottawa" />
+                    <StaticImage className={styles.Image} src="../../../images/first-assist-charity-Ottawa.jpeg" alt="first assist charity Ottawa" />
+                    <div className={styles.playBtn}>
+                        <a href="https://ottawa.ctvnews.ca/video?clipId=2158146" target="_blank">
+                            <span>
+                                <span>
+                                    <FontAwesomeIcon icon={faPlay} />
+                                </span>
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
     )
 }
 

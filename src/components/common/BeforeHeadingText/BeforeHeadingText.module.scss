@@ -1,0 +1,13 @@
+@import "src/styles/colors";
+.BeforeHeadingText {
+  color: $color-primary;
+  background: rgb(255, 234, 230);
+  display: inline-block;
+  border-radius: 50em;
+  padding: 10px 20px;
+  font-weight: 400;
+  line-height: 1.2em;
+  letter-spacing: 0.02em;
+  font-size: 14px;
+  margin-block: 0 10px;
+}

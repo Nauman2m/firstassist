@@ -33,6 +33,9 @@
         font-size: 51px;
         color: #000000;
         margin-bottom: 0.5em;
+        span {
+          display: inline-block;
+        }
       }
       .Content {
         p {
@@ -48,10 +51,12 @@
           a {
             display: inline-block;
             text-transform: uppercase;
-            font-weight: 700;
           }
         }
         .CnContainer {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
           p {
             color: #000000;
           }
@@ -64,6 +69,80 @@
     }
     .Right {
       width: 50%;
+      position: relative;
+      .Image {
+        position: relative;
+        z-index: 1;
+      }
+      .playBtn {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        a {
+          display: inline-flex;
+          padding: 0;
+          position: relative;
+          transition: all 0.3s;
+          & > span {
+            display: inline-flex;
+            border-radius: inherit;
+            border-color: inherit;
+            align-items: center;
+            & > span {
+              background: #ffffff;
+              color: rgb(0, 0, 0);
+              font-size: 22px;
+              width: 3.5em;
+              height: 3.5em;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 50%;
+              transition: all 0.3s;
+              svg {
+                width: 12px;
+              }
+              &::before {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                bottom: -2px;
+                right: -2px;
+                border-radius: inherit;
+                border: 1px solid #ffffff;
+                animation: btnIconRipple 2s cubic-bezier(0.23, 1, 0.32, 1) both
+                  infinite;
+              }
+            }
+          }
+          &:hover {
+            & > span > span {
+              background: $color-primary;
+              svg {
+                color: #ffffff;
+              }
+            }
+          }
+        }
+      }
     }
+  }
+}
+/* Animations */
+@keyframes btnIconRipple {
+  0% {
+    border-width: 4px;
+    transform: scale(1);
+  }
+  80% {
+    border-width: 1px;
+    transform: scale(1.35);
+  }
+  100% {
+    opacity: 0;
   }
 }
