@@ -1,0 +1,17 @@
+.ImageBoxGrid {
+  .wrapper {
+    max-width: 1240px;
+    margin: 0 auto;
+    .topContent {
+      margin-bottom: 80px;
+      p {
+        width: 70%;
+      }
+    }
+    .gridWrap {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row-reverse;
+    }
+  }
+}

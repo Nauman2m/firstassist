@@ -1,6 +1,6 @@
 import React from 'react';
 import Layouts from '../components/Layouts';
-import { HomeHero, LeftThreeParallaxImageRightContent, LogoFlex, OurAchivements } from '../components/modules';
+import { HomeHero, ImageBoxGrid, LeftThreeParallaxImageRightContent, LogoFlex, OurAchivements } from '../components/modules';
 
 const Page = () => {
   return (
@@ -9,6 +9,7 @@ const Page = () => {
       <LogoFlex />
       <LeftThreeParallaxImageRightContent />
       <OurAchivements />
+      <ImageBoxGrid />
     </Layouts>
   )
 }
