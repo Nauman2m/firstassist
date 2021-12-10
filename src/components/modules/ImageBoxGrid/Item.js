@@ -22,7 +22,7 @@ const Item = () => {
         itemAnimate.current.reverse();
     };
     return (
-        <div className={`${styles.gridItem} gridboxitem`} onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHandler}>
+        <a href="#" className={`${styles.gridItem} gridboxitem`} onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHandler}>
             <StaticImage className={styles.Image} src="../../../images/charity-education.jpeg" alt="charity-education" />
             <div className={styles.contentWrap}>
                 <div ref={itemRef} className={styles.content}>
@@ -34,7 +34,7 @@ const Item = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
     )
 }
 

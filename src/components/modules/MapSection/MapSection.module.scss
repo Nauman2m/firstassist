@@ -1,0 +1,55 @@
+.MapSection {
+  padding-top: 40px;
+  .sectionWrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    .mapWrap {
+      margin-top: 80px;
+      display: flex;
+      flex-flow: row;
+      .mapLocWrap {
+        flex-basis: 350px;
+        position: relative;
+        .mapLocs {
+          position: relative;
+          padding: 40px 40px 40px 125px;
+          width: 335px;
+          left: -120px;
+          background: #fff4f4;
+          border-radius: 20px;
+          .LocsWrap {
+            position: relative;
+            height: 586px;
+            overflow-x: scroll;
+            ul {
+              list-style: none;
+              padding: 0;
+              li {
+                font-size: 16px;
+                line-height: 1.5;
+                border-bottom: 1px solid #f3e1e1;
+                a {
+                  text-decoration: none;
+                  color: #444;
+                  padding: 8px;
+                  display: block;
+                  &:hover {
+                    background: rgba(0, 0, 0, 0.05);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .mapSvgWrap {
+        position: relative;
+        flex-grow: 1;
+        padding-top: 80px;
+        .mapCont {
+          position: relative;
+        }
+      }
+    }
+  }
+}

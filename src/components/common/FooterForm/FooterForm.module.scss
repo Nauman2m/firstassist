@@ -1,0 +1,31 @@
+.FooterForm {
+  padding: 36px 35px;
+  background: #333;
+  border-radius: 30px;
+  form {
+    input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
+    textarea {
+      width: 100%;
+      padding: 5px 0px !important;
+      background: transparent;
+      border: 0;
+      outline: none;
+      border-bottom: 1px solid #999;
+      color: #fff;
+      font-size: 15px !important;
+    }
+    input[type="button"] {
+      background: #fd2d2d;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 15px;
+      padding: 10px 40px;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+    .inputWrap {
+      margin-top: 16px;
+    }
+  }
+}
