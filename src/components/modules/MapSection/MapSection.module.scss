@@ -45,9 +45,9 @@
       .mapSvgWrap {
         position: relative;
         flex-grow: 1;
-        padding-top: 80px;
         .mapCont {
           position: relative;
+          left: -120px;
         }
       }
     }

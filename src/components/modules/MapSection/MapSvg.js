@@ -8,9 +8,8 @@ function SvgMapSvg(props) {
       viewBox="0 0 535.33 443.33"
       preserveAspectRatio="xMidYMid meet"
       style={{
-        width: "535.33px",
+        width: "805px",
       }}
-      transform="scale(1.50375)"
       {...props}
     >
       <defs>
