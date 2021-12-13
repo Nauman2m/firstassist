@@ -23,8 +23,6 @@ const ImageBoxGrid = () => {
         
     }, [])
 
-
-    
     return (
         <div ref={wrap} className={styles.ImageBoxGrid}>
             <div className={styles.wrapper}>

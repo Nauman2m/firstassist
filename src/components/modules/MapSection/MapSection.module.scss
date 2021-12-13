@@ -28,11 +28,18 @@
                 font-size: 16px;
                 line-height: 1.5;
                 border-bottom: 1px solid #f3e1e1;
-                a {
+                button {
+                  font-size: 16px;
+                  width: 100%;
+                  text-align: left;
                   text-decoration: none;
+                  border: none;
+                  background: none;
                   color: #444;
                   padding: 8px;
+                  margin: 0;
                   display: block;
+                  cursor: pointer;
                   &:hover {
                     background: rgba(0, 0, 0, 0.05);
                   }
@@ -45,9 +52,92 @@
       .mapSvgWrap {
         position: relative;
         flex-grow: 1;
+        .MapPins {
+          position: absolute;
+          left: -120px;
+          .pin {
+            position: absolute;
+            z-index: 2;
+            opacity: 0.4;
+            filter: grayscale(0%);
+            cursor: pointer;
+            &:hover {
+              opacity: 1;
+            }
+            &.active {
+              opacity: 1;
+            }
+            img {
+              position: absolute;
+              left: 0;
+              top: 0;
+              z-index: 2;
+            }
+          }
+        }
         .mapCont {
           position: relative;
           left: -120px;
+        }
+        .LocInfo {
+          position: absolute;
+          width: 300px;
+          height: 190px;
+          top: 0px;
+          left: auto;
+          right: 170px;
+          box-shadow: 0px 0px 20px #eee;
+          opacity: 0;
+          transition: all 0.3s;
+          &.activeInfo {
+            opacity: 1;
+          }
+          .info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            .head {
+              height: 28px;
+              padding: 0;
+              button {
+                border: none;
+                background: none;
+                position: absolute;
+                top: 10px;
+                right: 3px;
+                cursor: pointer;
+                z-index: 1200;
+                &::before,
+                &::after {
+                  content: "";
+                  position: absolute;
+                  height: 1px;
+                  width: 100%;
+                  top: 50%;
+                  left: 0;
+                  margin-top: -1px;
+                  background: #000;
+                }
+                &::before {
+                  transform: rotate(45deg);
+                }
+                &::after {
+                  transform: rotate(-45deg);
+                }
+              }
+            }
+            .content {
+              padding: 0 15px 15px 15px;
+              box-sizing: border-box;
+              h5 {
+                margin-block: 0 10px;
+                line-height: 1.2em;
+                font-size: 20px;
+              }
+            }
+          }
         }
       }
     }
