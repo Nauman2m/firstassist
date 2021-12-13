@@ -57,6 +57,8 @@
           left: -120px;
           .pin {
             position: absolute;
+            border: none;
+            background: none;
             z-index: 2;
             opacity: 0.4;
             filter: grayscale(0%);
@@ -78,6 +80,7 @@
         .mapCont {
           position: relative;
           left: -120px;
+          top: -7px;
         }
         .LocInfo {
           position: absolute;

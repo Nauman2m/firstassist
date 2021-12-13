@@ -38,14 +38,14 @@ const MapSection = () => {
                             {
                                 Locations.map((item, index) => {
                                     return (
-                                        <div key={index} className={`${styles.pin} ${pin === item.id ? styles.active : ''}`} style={{transform: `${item?.pin}`}}>
+                                        <button key={index} onClick={() => TriggerPin(item.id)} className={`${styles.pin} ${pin === item.id ? styles.active : ''}`} style={{transform: `${item?.pin}`}}>
                                             <img 
                                                 width={10} 
                                                 height={10} 
                                                 src="/images/user-location.svg" 
                                                 alt="Pin" 
                                             />
-                                        </div>
+                                        </button>
                                     )
                                 })
                             }
