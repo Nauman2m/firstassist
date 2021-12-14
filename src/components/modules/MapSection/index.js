@@ -4,7 +4,6 @@ import * as styles from './MapSection.module.scss';
 import MapSvg from './MapSvg';
 
 const MapSection = () => {
-    const [popupOpened, setPopupOpened] = useState(false);
     const [pin, setPin] = useState(null);
 
     function TriggerPin(i) {
