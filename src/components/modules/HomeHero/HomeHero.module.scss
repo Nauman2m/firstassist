@@ -3,7 +3,6 @@
 .HomeHero {
   position: relative;
   overflow: hidden;
-  margin-bottom: 80px;
   .particles {
     z-index: -1;
     .particlesCanvas {
@@ -29,7 +28,7 @@
         padding: 5% 3% 5% 18%;
       }
       h1 {
-        line-height: 1.1em;
+        line-height: 1em;
         font-size: 56px;
         color: #000000;
         margin-bottom: 0.3em;
@@ -59,9 +58,11 @@
           flex-direction: column;
           justify-content: center;
           p {
+            font-size: 18px;
             color: #000000;
           }
           a {
+            font-size: 18px;
             text-decoration: none;
             color: $color-primary;
           }
