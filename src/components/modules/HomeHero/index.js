@@ -5,6 +5,7 @@ import { gsap, TweenLite } from "gsap";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 import React, { useEffect } from 'react';
 import Particles from "react-tsparticles";
+import BeforeHeadingText from '../../common/BeforeHeadingText';
 import Button from '../../common/button';
 import * as styles from './HomeHero.module.scss';
 
@@ -14,6 +15,7 @@ const HomeHero = () => {
         gsap.registerPlugin(CSSRulePlugin);
         TweenLite.to( CSSRulePlugin.getRule(".UnderLine span::before"), 1, {cssRule:{width: "100%"}});
     }, [])
+
     let Params = {
         "particles": {
             "number": {
@@ -84,11 +86,14 @@ const HomeHero = () => {
             <Particles params={Params} className={styles.particles} canvasClassName={styles.particlesCanvas} />
             <div className={styles.HeroContent}>
                 <div className={styles.Left}>
+                    <div>
+                        <BeforeHeadingText text="First Assist Charity" />
+                    </div>
                     <h1 className="UnderLine">
-                        An Indigenous <span>Charitable Organization</span> Motivating Youth to Achieve & Succeed
+                        Prioritizing the Success of Every <span>Indigenous Child</span> and Teen Through Sport
                     </h1>
                     <div className={styles.Content}>
-                        <p>Lorem ipsum dolor sit amet, eos ex iudicabit argumentum, no mei sumo accusata honestatis ullum decore.</p>
+                        <p>For decades, indigenous communities have lived with certain disadvantages and through unimaginable circumstances, creating disparities in health, education, and opportunities. First Assist indigenous programs help change the statistics while emphasizing cultural preservation.</p>
                     </div>
                     <div className={styles.Cta}>
                         <div className={styles.btnContainer}>

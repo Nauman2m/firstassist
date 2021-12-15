@@ -20,7 +20,21 @@
           .LocsWrap {
             position: relative;
             height: 586px;
-            overflow-x: scroll;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            &:hover {
+              &::-webkit-scrollbar {
+                background: rgba(0, 0, 0, 0.25);
+                width: 10px;
+                transition: 0.2s;
+                border-radius: 5px;
+              }
+              &::-webkit-scrollbar-thumb {
+                background: rgba(0, 0, 0, 0.5);
+                margin: 0 1px;
+                border-radius: 3px;
+              }
+            }
             ul {
               list-style: none;
               padding: 0;
