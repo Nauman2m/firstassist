@@ -3,7 +3,7 @@ import gsap from "gsap";
 import React, { useEffect, useRef } from 'react';
 import * as styles from './gridItem.module.scss';
 
-const Item = () => {
+const Item = ({title, text, image}) => {
     const itemRef = useRef(null);
     const itemAnimate = useRef(null);
   
@@ -27,10 +27,10 @@ const Item = () => {
             <div className={styles.contentWrap}>
                 <div ref={itemRef} className={styles.content}>
                     <div className={styles.title}>
-                        <h2>Education</h2>
+                        <h2>{title}</h2>
                     </div>
                     <div className={styles.text}>
-                        <p>Teaching life skills and supporting the school environment through integrative programs & processes.</p>
+                        <p>{text}</p>
                     </div>
                 </div>
             </div>

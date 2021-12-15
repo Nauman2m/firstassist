@@ -55,12 +55,17 @@
         .MapPins {
           position: absolute;
           left: -120px;
+          &.activeMapPins {
+            .pin {
+              opacity: 0.4;
+            }
+          }
           .pin {
             position: absolute;
             border: none;
             background: none;
             z-index: 2;
-            opacity: 0.4;
+            opacity: 1;
             filter: grayscale(0%);
             cursor: pointer;
             &:hover {

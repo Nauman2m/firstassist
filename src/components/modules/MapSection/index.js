@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import useWindowSize from '@charlietango/use-window-size';
+import React, { useCallback, useState } from 'react';
 import Locations from './Locations';
 import * as styles from './MapSection.module.scss';
 import MapSvg from './MapSvg';
 
 const MapSection = () => {
+    const {width} = useWindowSize();
+    let mobileScreen = width < 768;
     const [pin, setPin] = useState(null);
+    const [pinHovered, setPinHovered] = useState(false);
+
+    let TriggerHovered = useCallback(() => {
+        setPinHovered(state => !state);
+    }, []);
 
     function TriggerPin(i) {
         setPin(i)
@@ -33,17 +41,19 @@ const MapSection = () => {
                         </div>
                     </div>
                     <div className={styles.mapSvgWrap}>
-                        <div className={styles.MapPins}>
+                        <div className={`${styles.MapPins} ${pinHovered ? styles.activeMapPins : ''}`}>
                             {
                                 Locations.map((item, index) => {
                                     return (
-                                        <button key={index} onClick={() => TriggerPin(item.id)} className={`${styles.pin} ${pin === item.id ? styles.active : ''}`} style={{transform: `${item?.pin}`}}>
-                                            <img 
-                                                width={10} 
-                                                height={10} 
-                                                src="/images/user-location.svg" 
-                                                alt="Pin" 
-                                            />
+                                        <button 
+                                            key={index} 
+                                            onClick={() => TriggerPin(item.id)}
+                                            onMouseEnter={!mobileScreen ? TriggerHovered : () => false}
+                                            onMouseLeave={!mobileScreen ? TriggerHovered : () => false}
+                                            className={`${styles.pin} ${pin === item.id ? styles.active : ''}`} 
+                                            style={{transform: `${item?.pin}`}}
+                                        >
+                                            <img width={10} height={10} src="/images/user-location.svg" alt="Pin" />
                                         </button>
                                     )
                                 })
