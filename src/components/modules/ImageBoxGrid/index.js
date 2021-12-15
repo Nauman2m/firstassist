@@ -25,16 +25,6 @@ const Items = [
         text: 'We aim to improve the athletic abilities of participants and mentors, offering skill development in athletics and coaching/instruction.',
         img: '../../../images/charity-education.jpeg',
     },
-    {
-        title: 'Multi-Stage Development',
-        text: 'Sumo oblique prodesset ei eos, ne duo commodo iudicabit, id dolorem conceptam mea. No duo etiam zril facilisi, te facilis repudiare expetendis ius, vidisse fastidii persecuti his ne.',
-        img: '../../../images/charity-education.jpeg',
-    },
-    {
-        title: 'Professional Instructors',
-        text: 'Sumo oblique prodesset ei eos, ne duo commodo iudicabit, id dolorem conceptam mea. No duo etiam zril facilisi, te facilis repudiare expetendis ius, vidisse fastidii persecuti his ne.',
-        img: '../../../images/charity-education.jpeg',
-    },
 ]
 
 const ImageBoxGrid = () => {
@@ -61,8 +51,7 @@ const ImageBoxGrid = () => {
             <div className={styles.wrapper}>
                 <div className={styles.topContent}>
                     <BeforeHeadingText text="What We Do" />
-                    <h2>Integrative Programs</h2>
-                    <p>First Assist is a registered Canadian charity that focuses on the implementation of indigenous education programs that have the potential to change lives. We work with communities to develop programming that teaches transferable life skills proven to improve school attendance and graduation rates.</p>
+                    <h2>Four Pillars of Programming</h2>
                 </div>
                 <div className={styles.gridWrap}>
                     {
