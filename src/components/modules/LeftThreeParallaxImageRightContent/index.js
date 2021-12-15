@@ -40,7 +40,7 @@ const LeftThreeParallaxImageRightContent = () => {
                     <div className={styles.Content}>
                         <p>that focuses on the implementation of indigenous education programs that have the potential to change lives. We work with communities to develop programming that teaches transferable life skills proven to improve school attendance and graduation rates.</p>
                     </div>
-                    <Button type="link" href="/" text="Join Us Today" />
+                    <Button type="link" href="/" text="More About Us" />
                 </div>
                 
             </div>
