@@ -23,6 +23,7 @@
       padding: 10% 2% 0 5%;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       @include xxl {
         width: 29%;
         padding: 5% 3% 5% 18%;
