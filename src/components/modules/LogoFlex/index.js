@@ -6,7 +6,8 @@ const LogoFlex = () => {
     return (
         <div className={styles.LogoFlex}>
             <div className={styles.SectionText}>
-                <p>Partner With Us</p>
+                <h2>Your Donation Matters</h2>
+                <p>Partner with Canada’s premiere sports-centred indigenous charitable organization and be part of the solution.</p>
             </div>
             <div className={styles.logoContainer}>
                 <StaticImage className={styles.logo} src="../../../images/birks.jpeg" alt="Logo Flex" />
