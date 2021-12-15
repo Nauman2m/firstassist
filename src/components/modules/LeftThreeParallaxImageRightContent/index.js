@@ -35,10 +35,10 @@ const LeftThreeParallaxImageRightContent = () => {
                     <BeforeHeadingText text="About Us" />
                     <h2 className="UnderLine">Who <span>We</span> Are</h2>
                     <div className={styles.TextHighLight}>
-                        <p>First Assist is an Indigenous led charitable organization.</p>
+                        <p>First Assist is a registered Canadian charity</p>
                     </div>
                     <div className={styles.Content}>
-                        <p>We have a combined 40 years of on-site Indigenous youth development. We have worked with over 3000 Indigenous youth during programming. Throughout this time, we have developed proprietary education, capacity building and health frameworks to ensure our programs fit and are tailored to community needs. Our programs were built from communicating and learning from local youth and community members! Over the past years, First Assist programs have proven to reduce student absenteeism and increase attendance and participation in school resulting in high school graduation rates on par with the National average.</p>
+                        <p>that focuses on the implementation of indigenous education programs that have the potential to change lives. We work with communities to develop programming that teaches transferable life skills proven to improve school attendance and graduation rates.</p>
                     </div>
                     <Button type="link" href="/" text="Join Us Today" />
                 </div>
