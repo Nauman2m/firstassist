@@ -1,5 +1,6 @@
 import useWindowSize from '@charlietango/use-window-size';
 import React, { useCallback, useState } from 'react';
+import Button from '../../common/button';
 import Locations from './Locations';
 import * as styles from './MapSection.module.scss';
 import MapSvg from './MapSvg';
@@ -77,6 +78,9 @@ const MapSection = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className={styles.Cta}>
+                    <Button type="link" href="/" text="Join Us Today" />
                 </div>
             </div>
         </div>
