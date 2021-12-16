@@ -32,7 +32,11 @@ const MapSection = () => {
                                         Locations.map((item, index) => {
                                             return (
                                                 <li key={index}>
-                                                    <button onClick={() => TriggerPin(item.id)}>{item.title}</button>
+                                                    <button 
+                                                        onClick={() => TriggerPin(item.id)}
+                                                    >
+                                                        {item.title}
+                                                    </button>
                                                 </li>
                                             )
                                         })
