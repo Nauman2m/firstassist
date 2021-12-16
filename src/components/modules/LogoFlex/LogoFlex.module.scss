@@ -1,3 +1,4 @@
+@import "src/styles/fonts";
 .LogoFlex {
   margin-block: 80px 100px;
   .wrap {
@@ -11,14 +12,18 @@
       align-items: center;
       h2 {
         font-weight: 400;
-        font-size: 15px;
+        font-size: 13px;
+        text-transform: uppercase;
       }
       p {
-        width: 50%;
+        font-family: $heading-font;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.6em;
+        color: #000000;
+        width: 60%;
         text-align: center;
-        text-transform: uppercase;
         margin-bottom: 2.5em;
-        font-weight: 700;
       }
     }
     .logoContainer {
@@ -31,6 +36,7 @@
       text-align: center;
       padding-top: 30px;
       a {
+        font-family: $heading-font;
         color: #fc2d2d;
       }
     }
