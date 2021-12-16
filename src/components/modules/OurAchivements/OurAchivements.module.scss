@@ -27,11 +27,9 @@
   .wrap {
     max-width: 1240px;
     margin: 0 auto;
-    display: flex;
-    .left {
-      width: 40%;
+    .top {
+      padding-bottom: 30px;
       h2 {
-        font-size: 50px;
         color: #fff;
         line-height: 1.1em;
         span {
@@ -43,52 +41,22 @@
         font-size: 22px;
       }
     }
-    .right {
-      width: 41%;
-      margin-left: 19%;
-      .CounterWrap {
-        background-color: #ffffff;
-        border-radius: 15px;
-        display: flex;
-        flex-wrap: wrap;
-        .CounterBox {
-          width: 50%;
-          &:nth-child(1) {
-            .boxWrap {
-              border-right: 1px solid #eee;
-              border-bottom: 1px solid #eee;
-            }
-          }
-          &:nth-child(2) {
-            .boxWrap {
-              border-bottom: 1px solid #eee;
-            }
-          }
-          &:nth-child(3) {
-            .boxWrap {
-              border-right: 1px solid #eee;
-            }
-          }
-          .boxWrap {
-            padding-top: 45px;
-            padding-bottom: 35px;
-            .CountNumb {
-              font-size: 48px;
-              font-weight: 700;
-              margin-bottom: 13px;
-              text-align: center;
-              color: #000;
-              margin-bottom: 13px;
-              &.CountNumbWithPlus {
-                &::after {
-                  content: "+";
-                }
-              }
-            }
-            .CountText {
-              text-align: center;
-              color: rgb(119, 119, 119);
-            }
+    .gridBoxs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .box {
+        width: 23%;
+        background: #ffffff;
+        border-radius: 8px;
+        .wrap {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding-inline: 15px;
+          padding-block: 25px 15px;
+          .content {
+            text-align: center;
           }
         }
       }

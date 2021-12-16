@@ -1,3 +1,4 @@
+import { StaticImage } from "gatsby-plugin-image";
 import { gsap, TweenLite } from "gsap";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -43,51 +44,44 @@ const OurAchivements = () => {
 				</svg>
             </div>
             <div className={styles.wrap}>
-                <div className={styles.left}>
+                <div className={styles.top}>
                     <BeforeHeadingText text="Our Achivements" />
-                    <h2 className="LightLine">Success Through <span>Sport</span></h2>
-                    <p>Building and shaping healthy habits and behavioral responses through structured sport integration programs.</p>
+                    <h2 className="LightLine">Community <span>Partnership</span> Model</h2>
                 </div>
-                <div className={styles.right}>
-                    <div className={styles.CounterWrap}>
-                        <div className={styles.CounterBox}>
-                            <div className={styles.boxWrap}>
-                                <div className={`${styles.CountNumb} numcnt`}>
-                                    40
-                                </div>
-                                <div className={styles.CountText}>
-                                    Years of development
-                                </div>
+                <div className={styles.gridBoxs}>
+                    <div className={styles.box}>
+                        <div className={styles.wrap}>
+                            <StaticImage className={styles.icon} src="../../../images/demo-icon.png" alt="demo-icon" />
+                            <div className={styles.content}>
+                                <h3>NEEDS ANALYSIS</h3>
+                                <p>We consult with multiple local community members to identify issues impacting the community.</p>
                             </div>
                         </div>
-                        <div className={styles.CounterBox}>
-                            <div className={styles.boxWrap}>
-                                <div className={`${styles.CountNumb} ${styles.CountNumbWithPlus} numcnt`}>
-                                    3000
-                                </div>
-                                <div className={styles.CountText}>
-                                    Indigenous Youth Network
-                                </div>
+                    </div>
+                    <div className={styles.box}>
+                        <div className={styles.wrap}>
+                            <StaticImage className={styles.icon} src="../../../images/demo-icon.png" alt="demo-icon" />
+                            <div className={styles.content}>
+                                <h3>COMMUNITY CONSULTATION</h3>
+                                <p>Alongside community leadership, we develop programming to help close gaps in health and education.</p>
                             </div>
                         </div>
-                        <div className={styles.CounterBox}>
-                            <div className={styles.boxWrap}>
-                                <div className={`${styles.CountNumb} ${styles.CountNumbWithPlus} numcnt`}>
-                                    50
-                                </div>
-                                <div className={styles.CountText}>
-                                    Community Partners
-                                </div>
+                    </div>
+                    <div className={styles.box}>
+                        <div className={styles.wrap}>
+                            <StaticImage className={styles.icon} src="../../../images/demo-icon.png" alt="demo-icon" />
+                            <div className={styles.content}>
+                                <h3>INSTRUCTOR/COMMUNITY PARTNERSHIPS</h3>
+                                <p>Our programs utilize mentors from outside and within the community to be sure we present programming that is culturally relevant and preserves the language and customs of the people.</p>
                             </div>
                         </div>
-                        <div className={styles.CounterBox}>
-                            <div className={styles.boxWrap}>
-                                <div className={`${styles.CountNumb} numcnt`}>
-                                    15
-                                </div>
-                                <div className={styles.CountText}>
-                                    Integrative Programs
-                                </div>
+                    </div>
+                    <div className={styles.box}>
+                        <div className={styles.wrap}>
+                            <StaticImage className={styles.icon} src="../../../images/demo-icon.png" alt="demo-icon" />
+                            <div className={styles.content}>
+                                <h3>PROGRAM IMPLEMENTATION</h3>
+                                <p>We launch collaborative, meaningful sports-centered programming that is proven to create positive change within indigenous communities.</p>
                             </div>
                         </div>
                     </div>

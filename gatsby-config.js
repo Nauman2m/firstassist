@@ -21,12 +21,12 @@ module.exports = {
         fonts: {
           google2: [
             {
-              family: "Fira Sans",
-              axes: "wght@400;500;700",
+              family: "Montserrat",
+              axes: "wght@400;500;600;700",
             },
             {
-              family: "PT Sans",
-              axes: "wght@400;700",
+              family: "Roboto",
+              axes: "wght@400;500;600;700",
             },
           ],
         },
