@@ -1,0 +1,90 @@
+@import "src/styles/fonts";
+@import "src/styles/colors";
+.CharitableOrganization {
+  margin-top: 50px;
+  .top {
+    max-width: 1240px;
+    margin: 0 auto;
+    h2 {
+      width: 75%;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+    p {
+      font-family: $heading-font;
+      font-weight: 500;
+      font-size: 20px;
+      color: #000000;
+      margin-bottom: 2.5em;
+    }
+  }
+  .bottom {
+    background: #fff4f4;
+    padding-block: 120px;
+    margin-block: 60px;
+    position: relative;
+    .CurveTop {
+      width: 100%;
+      height: 60px;
+      position: absolute;
+      top: -1px;
+      svg {
+        transform: rotateZ(180deg);
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .CurveBottom {
+      width: 100%;
+      height: 60px;
+      position: absolute;
+      bottom: -1px;
+      svg {
+        transform: scaleX(-1);
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      .left {
+        width: 50%;
+        .image {
+          position: absolute;
+          top: -50%;
+          left: -130px;
+          z-index: 1;
+          transform: translateY(50%);
+        }
+      }
+      .right {
+        width: 50%;
+        .overlayImg {
+          position: absolute;
+          right: -1px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        ul {
+          margin-bottom: 30px;
+          padding-inline-start: 16px;
+          list-style: none;
+          li {
+            position: relative;
+            &::before {
+              position: absolute;
+              content: "";
+              width: 5px;
+              height: 5px;
+              background: $color-primary;
+              top: 50%;
+              left: -15px;
+              transform: translateY(-50%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
