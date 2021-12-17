@@ -1,6 +1,7 @@
 export { default as CharitableOrganization } from './CharitableOrganization';
 export { default as HomeHero } from './HomeHero';
 export { default as ImageBoxGrid } from './ImageBoxGrid';
+export { default as IndigenousPrograms } from './IndigenousPrograms';
 export { default as LeftImageRightContent } from './LeftImageRightContent';
 export { default as LogoFlex } from './LogoFlex';
 export { default as MapSection } from './MapSection';

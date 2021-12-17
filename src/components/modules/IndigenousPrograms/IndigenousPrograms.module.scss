@@ -1,0 +1,88 @@
+.IndigenousPrograms {
+  background: #000;
+  padding-block: 120px;
+  margin-block-start: 100px;
+  position: relative;
+  .CurveTop {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    top: -1px;
+    svg {
+      transform: rotateZ(180deg);
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .CurveBottom {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: -1px;
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    .left {
+      width: 40%;
+      p {
+        color: #fff;
+        font-size: 30px;
+        padding-bottom: 20px;
+      }
+    }
+    .right {
+      width: 48%;
+      margin-left: 12%;
+      .CounterWrap {
+        background-color: #ffffff;
+        border-radius: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        .CounterBox {
+          width: 50%;
+          &:nth-child(1) {
+            .boxWrap {
+              border-right: 1px solid #eee;
+              border-bottom: 1px solid #eee;
+            }
+          }
+          &:nth-child(2) {
+            .boxWrap {
+              border-bottom: 1px solid #eee;
+            }
+          }
+          &:nth-child(3) {
+            .boxWrap {
+              border-right: 1px solid #eee;
+            }
+          }
+          .boxWrap {
+            padding-top: 45px;
+            padding-bottom: 35px;
+            .CountNumb {
+              font-size: 48px;
+              font-weight: 700;
+              margin-bottom: 13px;
+              text-align: center;
+              color: #000;
+              margin-bottom: 13px;
+              &::after {
+                content: "%";
+              }
+            }
+            .CountText {
+              text-align: center;
+              color: rgb(119, 119, 119);
+            }
+          }
+        }
+      }
+    }
+  }
+}
