@@ -1,3 +1,4 @@
+@import "src/styles/fonts";
 .IndigenousPrograms {
   background: #000;
   padding-block: 120px;
@@ -66,12 +67,12 @@
             padding-top: 45px;
             padding-bottom: 35px;
             .CountNumb {
-              font-size: 48px;
+              font-family: $heading-font;
+              font-size: 45px;
               font-weight: 700;
-              margin-bottom: 13px;
               text-align: center;
               color: #000;
-              margin-bottom: 13px;
+              margin-bottom: 20px;
               &::after {
                 content: "%";
               }
