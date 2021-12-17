@@ -51,36 +51,36 @@ const OurAchivements = () => {
                 <div className={styles.gridBoxs}>
                     <div className={styles.box}>
                         <div className={styles.wrap}>
-                            <StaticImage className={styles.icon} src="../../../images/demo-icon.png" alt="demo-icon" />
+                            <StaticImage className={styles.icon} src="../../../images/need-analysis.png" alt="demo-icon" />
                             <div className={styles.content}>
-                                <h3>NEEDS ANALYSIS</h3>
+                                <h3>Needs Analysis</h3>
                                 <p>We consult with multiple local community members to identify issues impacting the community.</p>
                             </div>
                         </div>
                     </div>
                     <div className={styles.box}>
                         <div className={styles.wrap}>
-                            <StaticImage className={styles.icon} src="../../../images/demo-icon.png" alt="demo-icon" />
+                            <StaticImage className={styles.icon} src="../../../images/Community-Consultation.png" alt="demo-icon" />
                             <div className={styles.content}>
-                                <h3>COMMUNITY CONSULTATION</h3>
+                                <h3>Community Consultation</h3>
                                 <p>Alongside community leadership, we develop programming to help close gaps in health and education.</p>
                             </div>
                         </div>
                     </div>
                     <div className={styles.box}>
                         <div className={styles.wrap}>
-                            <StaticImage className={styles.icon} src="../../../images/demo-icon.png" alt="demo-icon" />
+                            <StaticImage className={styles.icon} src="../../../images/Instructor-Community-Partnerships.png" alt="demo-icon" />
                             <div className={styles.content}>
-                                <h3>INSTRUCTOR/COMMUNITY PARTNERSHIPS</h3>
+                                <h3>Instructor/Community Partnerships</h3>
                                 <p>Our programs utilize mentors from outside and within the community to be sure we present programming that is culturally relevant and preserves the language and customs of the people.</p>
                             </div>
                         </div>
                     </div>
                     <div className={styles.box}>
                         <div className={styles.wrap}>
-                            <StaticImage className={styles.icon} src="../../../images/demo-icon.png" alt="demo-icon" />
+                            <StaticImage className={styles.icon} src="../../../images/Program-Implementation.png" alt="demo-icon" />
                             <div className={styles.content}>
-                                <h3>PROGRAM IMPLEMENTATION</h3>
+                                <h3>Program Implementation</h3>
                                 <p>We launch collaborative, meaningful sports-centered programming that is proven to create positive change within indigenous communities.</p>
                             </div>
                         </div>

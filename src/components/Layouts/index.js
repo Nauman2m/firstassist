@@ -1,7 +1,7 @@
 import React from 'react'
+import '../../styles/index.scss'
 import Footer from './Footer'
 import Header from './Header'
-import './index.scss'
 import Seo from './Seo'
 
 const Layouts = ({path, children, title, description}) => {
