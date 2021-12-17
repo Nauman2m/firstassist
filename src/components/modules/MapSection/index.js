@@ -46,7 +46,7 @@ const MapSection = () => {
                         </div>
                     </div>
                     <div className={styles.mapSvgWrap}>
-                        <div className={`${styles.MapPins} ${pinHovered ? styles.activeMapPins : ''}`}>
+                        <div className={`${styles.MapPins} ${pinHovered || pin !== null ? styles.activeMapPins : ''}`}>
                             {
                                 Locations.map((item, index) => {
                                     return (
