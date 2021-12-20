@@ -84,7 +84,7 @@ const MapSection = () => {
                     </div>
                 </div>
                 <div className={styles.Cta}>
-                    <Button type="link" href="/" text="Join Us Today" />
+                    <Button type="link" href="/" text="Learn About Virtual Experiences" />
                 </div>
             </div>
         </div>

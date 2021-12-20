@@ -33,7 +33,7 @@ const Footer = () => {
                                 <span>
                                     <FontAwesomeIcon className={styles.Icon} icon={faMapMarkerAlt} />
                                 </span>
-                                <a href="https://goo.gl/maps/bowxuYm717PMM57D6" target="_blank">838 Colonel By Drive Ottawa, Ontario K1S 5C4</a>
+                                <a href="https://goo.gl/maps/bowxuYm717PMM57D6" target="_blank" rel="noreferrer">838 Colonel By Drive Ottawa, Ontario K1S 5C4</a>
                             </li>
                             <li>
                                 <span>

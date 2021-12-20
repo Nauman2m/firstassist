@@ -1,0 +1,103 @@
+@import "src/styles/colors";
+.Testimonial {
+  margin-block: 100px;
+  .wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    background-image: url(/images/map-bg.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    .left {
+      width: 20%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .img1 {
+        width: 80px;
+        margin-left: auto;
+        top: 100px;
+      }
+      .img2 {
+        width: 80px;
+        top: 120px;
+      }
+      .img3 {
+        width: 80px;
+        margin-left: auto;
+        top: 160px;
+      }
+    }
+    .center {
+      width: 60%;
+      text-align: center;
+      h3 {
+        margin-bottom: 50px;
+        font-size: 18px;
+        text-align: center;
+        color: $color-primary;
+        text-transform: uppercase;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 120px;
+      }
+      .slider {
+        p {
+          margin-top: 50px;
+          font-size: 18px;
+          line-height: 1.7;
+        }
+        .author {
+          margin-block: 50px 20px;
+          text-transform: uppercase;
+          font-weight: 600;
+        }
+        :global(.slick-arrow) {
+          &::before {
+            color: transparent;
+          }
+        }
+        :global(.slick-dots) {
+          button {
+            &::before {
+              content: "";
+              background: #cdd8ee;
+              height: 3px;
+              width: 25px;
+            }
+          }
+        }
+        :global(.slick-active) {
+          button {
+            &::before {
+              background: $color-primary;
+            }
+          }
+        }
+      }
+    }
+    .right {
+      width: 20%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .img1 {
+        width: 80px;
+        top: 100px;
+      }
+      .img2 {
+        width: 80px;
+        margin-left: auto;
+        top: 120px;
+      }
+      .img3 {
+        width: 80px;
+        top: 160px;
+      }
+    }
+  }
+}

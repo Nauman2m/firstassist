@@ -1,6 +1,6 @@
 import React from 'react';
 import Layouts from '../components/Layouts';
-import { CharitableOrganization, HomeHero, ImageBoxGrid, IndigenousPrograms, LeftImageRightContent, LogoFlex, MapSection, OurAchivements } from '../components/modules';
+import { CharitableOrganization, CulturalPreservation, HomeHero, ImageBoxGrid, ImageFlex, IndigenousPrograms, LeftImageRightContent, LogoFlex, MapSection, OurAchivements, Testimonial } from '../components/modules';
 
 const Page = () => {
   return (
@@ -13,6 +13,9 @@ const Page = () => {
       <CharitableOrganization />
       <IndigenousPrograms />
       <MapSection />
+      <CulturalPreservation />
+      <ImageFlex />
+      <Testimonial />
     </Layouts>
   )
 }

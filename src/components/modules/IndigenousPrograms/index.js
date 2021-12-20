@@ -10,7 +10,7 @@ function numberWithCommas(x) {
 }
 
 const IndigenousPrograms = () => {
-    const wrap = useRef(null)
+    const IndigenousPrograms = useRef(null)
 
     useEffect(() => {
         gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
@@ -30,13 +30,13 @@ const IndigenousPrograms = () => {
               },
             },
             scrollTrigger: {
-              trigger: wrap.current,
+              trigger: IndigenousPrograms.current,
               start: "-20% center",
             }
         });
     }, [])
     return (
-        <div ref={wrap} className={styles.IndigenousPrograms}>
+        <div ref={IndigenousPrograms} className={styles.IndigenousPrograms}>
             <div className={styles.CurveTop}>
                 <svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" width="1440" height="100" viewBox="0 0 1440 100" preserveAspectRatio="none">
 					<path id="Row_Separator" data-name="Row Separator" d="M1440,0Q1080,99,720,99T0,0V100H1440Z"></path>

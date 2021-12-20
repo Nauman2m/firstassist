@@ -1,0 +1,48 @@
+.CulturalPreservation {
+  display: flex;
+  flex-wrap: wrap;
+  margin-block: 100px 0;
+  .left {
+    width: 50%;
+    position: relative;
+  }
+  .right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    .wrap {
+      max-width: 620px;
+      .textHighlight {
+        margin-top: 30px;
+        color: #000;
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      .ListElm {
+        margin-top: 30px;
+        h3 {
+          font-size: 18px;
+        }
+        ul {
+          list-style: none;
+          margin-bottom: 30px;
+          padding-inline-start: 16px;
+          li {
+            position: relative;
+            margin-block-end: 30px;
+            &::before {
+              position: absolute;
+              content: "";
+              width: 5px;
+              height: 5px;
+              background: #fc2d2d;
+              top: 10px;
+              left: -15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

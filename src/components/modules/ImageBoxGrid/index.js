@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import React, { useEffect, useRef } from 'react';
 import BeforeHeadingText from '../../common/BeforeHeadingText';
 import * as styles from './ImageBoxGrid.module.scss';
@@ -31,6 +32,8 @@ const ImageBoxGrid = () => {
     const wrap = useRef(null);
 
     useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
         gsap.to(".gridboxitem", 1, {
             yPercent: 10,
             ease: "linear",
