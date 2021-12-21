@@ -7,7 +7,7 @@ const CulturalPreservation = () => {
     return (
         <div className={styles.CulturalPreservation}>
             <div className={styles.left}>
-                <StaticImage src="../../../images/Cultural-Preservation.png" alt="Cultural Preservation" />
+                <StaticImage src="../../../images/Cultural Preservation.png" alt="Cultural Preservation" />
             </div>
             <div className={styles.right}>
                 <div className={styles.wrap}>

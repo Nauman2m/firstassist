@@ -87,7 +87,7 @@ const HomeHero = () => {
             <div className={styles.HeroContent}>
                 <div className={styles.Left}>
                     <div>
-                        <BeforeHeadingText text="First Assist Charity" />
+                        <BeforeHeadingText text="First Assist Charity" tagname="h1" />
                     </div>
                     <h1 className="UnderLine">
                         Prioritizing the Success of Every <span>Indigenous Child</span> and Teen Through Sport

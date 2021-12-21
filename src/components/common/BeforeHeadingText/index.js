@@ -1,11 +1,12 @@
-import React from 'react'
-import * as styles from './BeforeHeadingText.module.scss'
+import React from 'react';
+import * as styles from './BeforeHeadingText.module.scss';
 
-const BeforeHeadingText = ({text}) => {
+const BeforeHeadingText = ({text, tagname = 'h6'}) => {
+    const CustomTag = tagname;
     return (
-        <h6 className={styles.BeforeHeadingText}>
+        <CustomTag className={styles.BeforeHeadingText}>
             {text}
-        </h6>
+        </CustomTag>
     )
 }
 
