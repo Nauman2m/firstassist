@@ -89,9 +89,9 @@ const HomeHero = () => {
                     <div>
                         <BeforeHeadingText text="First Assist Charity" tagname="h1" />
                     </div>
-                    <h1 className="UnderLine">
+                    <h2 className="UnderLine">
                         Prioritizing the Success of Every <span>Indigenous Child</span> and Teen Through Sport
-                    </h1>
+                    </h2>
                     <div className={styles.Content}>
                         <p>For decades, indigenous communities have lived with certain disadvantages and through unimaginable circumstances, creating disparities in health, education, and opportunities. First Assist indigenous programs help change the statistics while emphasizing cultural preservation.</p>
                     </div>
