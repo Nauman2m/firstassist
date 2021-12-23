@@ -56,7 +56,7 @@ const MapSection = () => {
                                             onMouseEnter={!mobileScreen ? TriggerHovered : () => false}
                                             onMouseLeave={!mobileScreen ? TriggerHovered : () => false}
                                             className={`${styles.pin} ${pin === item.id ? styles.active : ''}`} 
-                                            style={{transform: `${item?.pin}`}}
+                                            style={{transform: `${!mobileScreen ? item?.pin : item?.pinM}`}}
                                         >
                                             <img width={10} height={10} src="/images/user-location.svg" alt="Pin" />
                                         </button>
