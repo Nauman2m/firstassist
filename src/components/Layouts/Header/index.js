@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../../common/button';
 import * as styles from './header.module.scss';
 import NavList from './NavList';
@@ -73,6 +73,12 @@ let Menu = [
 ]
 
 const Header = ({path}) => {
+    const [MobNavBtn, setMobNavBtn] = useState(false);
+
+    const toggleMobBtn = () => {
+        setMobNavBtn(state => !state);
+    }
+
     return (
         <header className={styles.headerContainer}>
             <div className={styles.header}>
@@ -81,7 +87,7 @@ const Header = ({path}) => {
                         <img width={230} height={37} src="/images/first-assist-logo.png" alt="Logo" />
                     </Link>
                 </div>
-                <div className={styles.navContainer}>
+                <div className={`${styles.navContainer} ${MobNavBtn ? styles.active : ''}`}>
                     <ul>
                         {Menu.map((item) => {
                             return (
@@ -92,6 +98,17 @@ const Header = ({path}) => {
                 </div>
                 <div className={styles.btnContainer}>
                     <Button type="link" href="#" target="_blank" text="Donate Now" />
+                </div>
+                <div className={styles.MobNavBtn}>
+                    <button onClick={toggleMobBtn}>
+                        <span className={`${styles.bars} ${MobNavBtn ? styles.active : ''}`}>
+                            <span className={styles.barsInner}>
+                                <span className={styles.bar}></span>
+                                <span className={styles.bar}></span>
+                                <span className={styles.bar}></span>
+                            </span>
+                        </span>
+                    </button>
                 </div>
             </div>
         </header>

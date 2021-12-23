@@ -1,8 +1,12 @@
+@import "src/styles/bp";
 .ImageFlex {
   display: flex;
   flex-wrap: wrap;
   margin-top: 100px;
   justify-content: space-between;
+  @include sm {
+    margin-top: 50px;
+  }
   .image {
     width: 23%;
   }

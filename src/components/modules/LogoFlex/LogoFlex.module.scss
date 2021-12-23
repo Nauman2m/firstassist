@@ -1,6 +1,10 @@
 @import "src/styles/fonts";
+@import "src/styles/bp";
 .LogoFlex {
   margin-block: 80px 100px;
+  @include sm {
+    margin-block: 50px;
+  }
   .wrap {
     max-width: 1240px;
     margin: 0 auto;
@@ -24,12 +28,22 @@
         width: 60%;
         text-align: center;
         margin-bottom: 1.5em;
+        @include sm {
+          width: 90%;
+        }
       }
     }
     .logoContainer {
       display: flex;
+      @include sm {
+        flex-wrap: wrap;
+      }
       .logo {
         margin-inline: 15px;
+        margin-block-end: 15px;
+        @include sm {
+          width: calc(50% - 30px);
+        }
       }
     }
     .bottom {

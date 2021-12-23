@@ -1,13 +1,23 @@
+@import "src/styles/bp";
 .MapSection {
   padding-top: 40px;
   .sectionWrap {
     max-width: 1240px;
     margin: 0 auto;
+    @include sm {
+      max-width: 90%;
+    }
     .mapWrap {
       margin-top: 80px;
       display: flex;
       flex-flow: row;
+      @include sm {
+        margin-top: 0;
+      }
       .mapLocWrap {
+        @include sm {
+          display: none;
+        }
         flex-basis: 350px;
         position: relative;
         .mapLocs {
@@ -69,6 +79,11 @@
         .MapPins {
           position: absolute;
           left: -120px;
+          @include sm {
+            position: relative;
+            left: 0;
+            display: none;
+          }
           &.activeMapPins {
             .pin {
               opacity: 0.4;
@@ -100,6 +115,12 @@
           position: relative;
           left: -120px;
           top: -7px;
+          @include sm {
+            left: 0;
+            svg {
+              width: 100% !important;
+            }
+          }
         }
         .LocInfo {
           position: absolute;
@@ -165,6 +186,12 @@
     }
     .Cta {
       padding-block: 60px 20px;
+      @include sm {
+        padding-block: 0 20px;
+        a {
+          font-size: 13px;
+        }
+      }
     }
   }
 }

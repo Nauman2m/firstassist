@@ -1,3 +1,4 @@
+import useWindowSize from '@charlietango/use-window-size';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import React, { useEffect, useRef } from 'react';
@@ -30,24 +31,28 @@ const Items = [
 
 const ImageBoxGrid = () => {
     const wrap = useRef(null);
+    const { width } = useWindowSize();
+    const mobileScreen = width < 768;
+
+    console.log(mobileScreen)
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-
-        gsap.to(".gridboxitem", 1, {
-            yPercent: 10,
-            ease: "linear",
-            stagger: {
-                each: 0.6
-            },
-            scrollTrigger: {
-              trigger: wrap.current,
-              start: "-20% center",
-              scrub: 1
-            }
-        });
-        
-    }, [])
+        if (!mobileScreen) {
+            gsap.to(".gridboxitem", 1, {
+                yPercent: 10,
+                ease: "linear",
+                stagger: {
+                    each: 0.6
+                },
+                scrollTrigger: {
+                  trigger: wrap.current,
+                  start: "-20% center",
+                  scrub: 1
+                }
+            });
+        }
+    }, [width])
 
     return (
         <div ref={wrap} className={styles.ImageBoxGrid}>

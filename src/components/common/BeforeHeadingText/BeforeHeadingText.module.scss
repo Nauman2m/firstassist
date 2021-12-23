@@ -1,4 +1,5 @@
 @import "src/styles/colors";
+@import "src/styles/bp";
 .BeforeHeadingText {
   color: $color-primary !important;
   background: rgb(255, 234, 230);
@@ -10,4 +11,7 @@
   letter-spacing: 0.02em;
   font-size: 14px !important;
   margin-block: 0 10px;
+  @include sm {
+    font-size: 13px !important;
+  }
 }

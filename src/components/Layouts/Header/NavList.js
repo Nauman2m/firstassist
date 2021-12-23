@@ -1,20 +1,20 @@
 import useWindowSize from '@charlietango/use-window-size';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import RelativeLink from '../../common/RelativeLink';
 import * as styles from './NavList.module.scss';
 
 const NavList = ({item}) => {
     const { width } = useWindowSize();
-    const mobileScreen = width < 990;
+    const mobileScreen = width < 768;
     const { children = [] } = item
     const isExpandable = children && children.length > 0
     const [dropdownOpened, setDropdownOpened] = useState(false);
 
-    let toggleDropdown = useCallback(() => {
+    let toggleDropdown = () => {
       setDropdownOpened(state => !state);
-    }, []);
+    };
 
     const MenuItemChildren = (
         <ul className={`${styles.dropdown} ${dropdownOpened ? styles.isOpened : ''}`}>
@@ -30,7 +30,9 @@ const NavList = ({item}) => {
       onMouseLeave={!mobileScreen ? toggleDropdown : () => false}
       >
         <RelativeLink url={item?.url} label={item.label} />
-        <FontAwesomeIcon icon={faAngleDown} />
+        <button onClick={toggleDropdown}>
+          <FontAwesomeIcon icon={faAngleDown} />
+        </button>
         {MenuItemChildren}
       </li>
     ): (
