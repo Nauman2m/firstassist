@@ -23,7 +23,11 @@
       margin-top: 50px;
     }
     .wrap {
-      max-width: 620px;
+      max-width: 570px;
+      padding-left: 50px;
+      @include sm {
+        padding-left: 0;
+      }
       .textHighlight {
         margin-top: 35px;
         color: #000;
@@ -46,7 +50,7 @@
           margin-top: 25px;
           li {
             position: relative;
-            margin-block-end: 30px;
+            margin-block-end: 20px;
             @include sm {
               margin-block-end: 15px;
             }

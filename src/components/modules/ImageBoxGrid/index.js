@@ -1,4 +1,5 @@
 import useWindowSize from '@charlietango/use-window-size';
+import { graphql, useStaticQuery } from "gatsby";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import React, { useEffect, useRef } from 'react';
@@ -6,35 +7,58 @@ import BeforeHeadingText from '../../common/BeforeHeadingText';
 import * as styles from './ImageBoxGrid.module.scss';
 import Item from './Item';
 
-const Items = [
-    {
-        title: 'EDUCATION',
-        text: 'Providing programming that enhances the indigenous education experience is a critical outcome and success indicator of our charitable organization.',
-        img: '../../../images/charity-education.jpeg',
-    },
-    {
-        title: 'CAPACITY BUILDING',
-        text: 'Our community partnerships and programming strengthen the skills and abilities of indigenous communities by providing opportunities to share knowledge and experience, thus amplifying the likelihood of youth to thrive in any circumstance.',
-        img: '../../../images/charity-education.jpeg',
-    },
-    {
-        title: 'HEALTH',
-        text: 'Through sports education and programming, we emphasize the critical need for prioritizing health and wellness - both physically and mentally.',
-        img: '../../../images/charity-education.jpeg',
-    },
-    {
-        title: 'SPORT',
-        text: 'We aim to improve the athletic abilities of participants and mentors, offering skill development in athletics and coaching/instruction.',
-        img: '../../../images/charity-education.jpeg',
-    },
-]
-
 const ImageBoxGrid = () => {
     const wrap = useRef(null);
     const { width } = useWindowSize();
     const mobileScreen = width < 768;
 
-    console.log(mobileScreen)
+    const data = useStaticQuery(graphql`
+        query {
+            img1: file(relativePath: { eq: "charity-education.jpeg" }) {
+                childImageSharp {
+                    gatsbyImageData
+                }
+            }
+            img2: file(relativePath: { eq: "health-charity.jpg" }) {
+                childImageSharp {
+                    gatsbyImageData
+                }
+            }
+            img3: file(relativePath: { eq: "capacity-building.jpg" }) {
+                childImageSharp {
+                    gatsbyImageData
+                }
+            }
+            img4: file(relativePath: { eq: "sports-charity.jpg" }) {
+                childImageSharp {
+                    gatsbyImageData
+                }
+            }
+        }
+    `)
+
+    const Items = [
+        {
+            title: 'HEALTH',
+            text: 'Through sports education and programming, we emphasize the critical need for prioritizing health and wellness - both physically and mentally.',
+            img: data?.img2,
+        },
+        {
+            title: 'EDUCATION',
+            text: 'Providing programming that enhances the indigenous education experience is a critical outcome and success indicator of our charitable organization.',
+            img: data?.img1,
+        },
+        {
+            title: 'SPORT',
+            text: 'We aim to improve the athletic abilities of participants and mentors, offering skill development in athletics and coaching/instruction.',
+            img: data?.img4,
+        },
+        {
+            title: 'CAPACITY BUILDING',
+            text: 'Our community partnerships and programming strengthen the skills and abilities of indigenous communities by providing opportunities to share knowledge and experience, thus amplifying the likelihood of youth to thrive in any circumstance.',
+            img: data?.img3,
+        },
+    ]
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
