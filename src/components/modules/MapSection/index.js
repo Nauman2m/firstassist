@@ -1,5 +1,7 @@
 import useWindowSize from '@charlietango/use-window-size';
 import React, { useCallback, useState } from 'react';
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
 import Button from '../../common/button';
 import Locations from './Locations';
 import * as styles from './MapSection.module.scss';
@@ -9,7 +11,12 @@ const MapSection = () => {
     const {width} = useWindowSize();
     let mobileScreen = width < 768;
     const [pin, setPin] = useState(null);
+    const [ListScroll, setListScroll] = useState(false);
     const [pinHovered, setPinHovered] = useState(false);
+
+    let TriggerListScroll = useCallback(() => {
+        setListScroll(state => !state);
+    }, []);
 
     let TriggerHovered = useCallback(() => {
         setPinHovered(state => !state);
@@ -26,7 +33,11 @@ const MapSection = () => {
                 <div className={styles.mapWrap}>
                     <div className={styles.mapLocWrap}>
                         <div className={styles.mapLocs}>
-                            <div className={styles.LocsWrap}>
+                            <SimpleBar 
+                                className={`${styles.LocsWrap} ${ListScroll ? styles.customScrollBar : ''}`}
+                                onMouseEnter={!mobileScreen ? TriggerListScroll : () => false}
+                                onMouseLeave={!mobileScreen ? TriggerListScroll : () => false}  
+                            >
                                 <ul>
                                     {
                                         Locations.map((item, index) => {
@@ -42,7 +53,7 @@ const MapSection = () => {
                                         })
                                     }
                                 </ul>
-                            </div>
+                            </SimpleBar>
                         </div>
                     </div>
                     <div className={styles.mapSvgWrap}>

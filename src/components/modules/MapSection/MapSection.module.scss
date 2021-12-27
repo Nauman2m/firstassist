@@ -29,20 +29,21 @@
           border-radius: 20px;
           .LocsWrap {
             position: relative;
-            height: 586px;
-            overflow-x: hidden;
-            overflow-y: scroll;
-            &:hover {
-              &::-webkit-scrollbar {
+            max-height: 586px;
+            &.customScrollBar {
+              :global(.simplebar-vertical) {
                 background: rgba(0, 0, 0, 0.25);
                 width: 10px;
-                transition: 0.2s;
+                transition: 0.3s;
                 border-radius: 5px;
               }
-              &::-webkit-scrollbar-thumb {
+              :global(.simplebar-scrollbar) {
                 background: rgba(0, 0, 0, 0.5);
                 margin: 0 1px;
                 border-radius: 3px;
+                &::before {
+                  display: none;
+                }
               }
             }
             ul {
