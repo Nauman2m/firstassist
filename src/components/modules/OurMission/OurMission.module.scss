@@ -1,0 +1,27 @@
+.OurMission {
+  display: flex;
+  background-color: #eaeaea;
+  padding-bottom: 8px;
+  .left {
+    width: 66%;
+    .img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .right {
+    width: 33%;
+    display: flex;
+    align-items: center;
+    .contentWrap {
+      position: relative;
+      .content {
+        background: #fff;
+        padding: 30px;
+        margin-right: 100px;
+        margin-left: -200px;
+        border-radius: 6px;
+      }
+    }
+  }
+}

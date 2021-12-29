@@ -1,20 +1,13 @@
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { StaticImage } from "gatsby-plugin-image";
-import { gsap, TweenLite } from "gsap";
-import CSSRulePlugin from "gsap/CSSRulePlugin";
-import React, { useEffect } from 'react';
+import React from 'react';
 import Particles from "react-tsparticles";
 import BeforeHeadingText from '../../common/BeforeHeadingText';
 import Button from '../../common/button';
 import * as styles from './HomeHero.module.scss';
 
 const HomeHero = () => {
-    
-    useEffect(() => {
-        gsap.registerPlugin(CSSRulePlugin);
-        TweenLite.to( CSSRulePlugin.getRule(".UnderLine span::before"), 1, {cssRule:{width: "100%"}});
-    }, [])
 
     let Params = {
         "particles": {

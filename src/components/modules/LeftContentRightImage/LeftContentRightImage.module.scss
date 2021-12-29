@@ -1,0 +1,48 @@
+@import "src/styles/bp";
+.LeftContentRightImage {
+  padding-block: 0 100px;
+  .wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    .left {
+      width: 50%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-sizing: content-box;
+      h2 {
+        margin-bottom: 0.65em;
+      }
+      .TextHighLight {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      .Content {
+        p {
+          margin-bottom: 2.5em;
+        }
+      }
+    }
+    .right {
+      width: 41%;
+      margin-left: 9%;
+      .img {
+        border-radius: 6px;
+        animation: lqdFIFloatOne 1s ease infinite alternate;
+        animation-delay: 0s;
+      }
+    }
+  }
+}
+
+@keyframes lqdFIFloatOne {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(3%);
+  }
+}

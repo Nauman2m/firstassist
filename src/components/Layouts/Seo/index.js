@@ -98,11 +98,7 @@ import { Helmet } from 'react-helmet'
          {
            name: `twitter:data1`,
            content: `Danny`,
-         },
-         {
-           name: `google-site-verification`,
-           content: `${site.siteMetadata.gSiteVerification}`,
-         },
+         }
        ].concat(meta)}
      />
    )

@@ -16,7 +16,7 @@ let Menu = [
     {
         "id": "cG9zdDozODU=",
         "label": "Virtual",
-        "url": "https://firstassist.ca/about/",
+        "url": "https://firstassist.ca/virtual/",
         "parentId": null,
         "__typename": "MenuItem",
         "children": []
@@ -24,7 +24,7 @@ let Menu = [
     {
         "id": "cG9zdDozODY=",
         "label": "About",
-        "url": "https://firstassist.ca/services/",
+        "url": "https://firstassist.ca/about/",
         "parentId": null,
         "__typename": "MenuItem",
         "children": [
@@ -49,7 +49,7 @@ let Menu = [
     {
         "id": "cG9zdDozODc=",
         "label": "Community Commitment",
-        "url": "https://firstassist.ca/case-studies/",
+        "url": "https://firstassist.ca/Community-commitment/",
         "parentId": null,
         "__typename": "MenuItem",
         "children": []
@@ -57,7 +57,7 @@ let Menu = [
     {
         "id": "cG9zdDozODg=",
         "label": "Programs",
-        "url": "https://firstassist.ca/contact/",
+        "url": "https://firstassist.ca/programs/",
         "parentId": null,
         "__typename": "MenuItem",
         "children": []
@@ -65,7 +65,7 @@ let Menu = [
     {
         "id": "cG9zdDozOD1=",
         "label": "Join Us",
-        "url": "https://firstassist.ca/contact/",
+        "url": "https://firstassist.ca/join-us/",
         "parentId": null,
         "__typename": "MenuItem",
         "children": []
