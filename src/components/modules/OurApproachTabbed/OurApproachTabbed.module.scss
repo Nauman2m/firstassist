@@ -1,0 +1,78 @@
+@import "src/styles/colors";
+.OurApproachTabbed {
+  margin-block: 80px;
+  .wrap {
+    width: 1240px;
+    margin-inline: auto;
+    h2 {
+      text-align: center;
+    }
+    .tabNav {
+      display: flex;
+      flex-wrap: wrap;
+      margin-block: 60px 40px;
+      .btnContainer {
+        &:not(:last-of-type) {
+          margin-inline-end: 15px;
+        }
+        button {
+          background: #fff4f4;
+          color: rgb(252, 45, 45);
+          padding: 15px;
+          width: 290px;
+          text-align: center;
+          border-radius: 35px;
+          border: none;
+          cursor: pointer;
+        }
+        &.active {
+          button {
+            color: #fff;
+            background: $color-primary;
+          }
+        }
+      }
+    }
+    .content {
+      display: flex;
+      .imgContainer {
+        width: 50%;
+        padding-inline: 15px;
+        box-sizing: border-box;
+        .img {
+          border-radius: 20px;
+        }
+      }
+      .ContentBox {
+        width: 50%;
+        display: flex;
+        align-items: stretch;
+        padding: 130px 50px 70px 0;
+        position: relative;
+        &::before {
+          content: "";
+          background: #fff4f4;
+          position: absolute;
+          width: 675px;
+          height: 90%;
+          top: 55px;
+          right: 15px;
+          z-index: 0;
+          border-radius: 20px;
+        }
+        .box {
+          position: relative;
+          z-index: 1;
+          h3 {
+            font-size: 38px;
+            line-height: 1.5;
+            margin-block: 0 30px;
+          }
+          p {
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+  }
+}

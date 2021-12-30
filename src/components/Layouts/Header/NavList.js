@@ -16,6 +16,14 @@ const NavList = ({item}) => {
       setDropdownOpened(state => !state);
     };
 
+    let DropdownTrue = () => {
+      setDropdownOpened(true);
+    };
+
+    let DropdownFalse = () => {
+      setDropdownOpened(false);
+    };
+
     const MenuItemChildren = (
         <ul className={`${styles.dropdown} ${dropdownOpened ? styles.isOpened : ''}`}>
             {children.map((item, index) => (
@@ -26,8 +34,8 @@ const NavList = ({item}) => {
 
     const MenuItemRoot = isExpandable ? (
       <li className={styles.hasDropdown}
-      onMouseEnter={!mobileScreen ? toggleDropdown : () => false}
-      onMouseLeave={!mobileScreen ? toggleDropdown : () => false}
+      onMouseEnter={!mobileScreen ? DropdownTrue : () => false}
+      onMouseLeave={!mobileScreen ? DropdownFalse : () => false}
       >
         <RelativeLink url={item?.url} label={item.label} />
         <button onClick={toggleDropdown}>

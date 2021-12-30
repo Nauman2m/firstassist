@@ -49,7 +49,7 @@ let Menu = [
     {
         "id": "cG9zdDozODc=",
         "label": "Community Commitment",
-        "url": "https://firstassist.ca/Community-commitment/",
+        "url": "https://firstassist.ca/community-commitment/",
         "parentId": null,
         "__typename": "MenuItem",
         "children": []

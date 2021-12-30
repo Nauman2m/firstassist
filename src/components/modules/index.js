@@ -10,6 +10,7 @@ export { default as LeftImageRightContent } from './LeftImageRightContent';
 export { default as LogoFlex } from './LogoFlex';
 export { default as MapSection } from './MapSection';
 export { default as OurAchivements } from './OurAchivements';
+export { default as OurApproachTabbed } from './OurApproachTabbed';
 export { default as OurImpact } from './OurImpact';
 export { default as OurMission } from './OurMission';
 export { default as OurVision } from './OurVision';

@@ -1,28 +1,17 @@
-import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import { BgImage } from 'gbimage-bridge';
 import React from 'react';
 import Button from '../../common/button';
 import * as styles from './InnerHero.module.scss';
 
-const InnerHero = () => {
-    const { HeroBg } = useStaticQuery(
-        graphql`
-        query {
-            HeroBg: file(relativePath: { eq: "about-us-firstassist.jpeg" }) {
-                    childImageSharp {
-                        gatsbyImageData
-                    }
-                }
-            }
-        `
-    );
+const InnerHero = ({HeroBg, title, Desc}) => {
 
     return (
         <BgImage className={styles.heroBg} image={getImage(HeroBg)}>
             <div className={styles.BgImageOverlay} style={{background: 'rgba(0, 0, 0, 0.4)'}}></div>
             <div className={styles.content}>
-                <h1>About</h1>
+                <h1>{title}</h1>
+                {Desc && <p>{Desc}</p>}
                 <Button type="link" href="/" text="Join Us Today" />
             </div>
             <div className={styles.BgImageShape}>
