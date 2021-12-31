@@ -97,7 +97,7 @@ const Header = ({path}) => {
                     </ul>
                 </div>
                 <div className={styles.btnContainer}>
-                    <Button type="link" href="#" target="_blank" text="Donate Now" />
+                    <Button type="link" href="https://www.paypal.com/donate/?hosted_button_id=AYUHKTL24RHZU" target="_blank" text="Donate Now" />
                 </div>
                 <div className={styles.MobNavBtn}>
                     <button onClick={toggleMobBtn}>

@@ -45,7 +45,9 @@ const IndigenousPrograms = () => {
             <div className={styles.wrap}>
                 <div className={styles.left}>
                     <p>First Assist indigenous programs have proven to drastically reduce student absenteeism and increase school attendance, resulting in high school graduation rates on par with the national average.</p>
-                    <Button type="link" href="/" text="Get Your Community or Child Involved" />
+                    <div>
+                        <Button type="link" internal={true} href="/join-us/" text="Get Your Community or Child Involved" />
+                    </div>
                 </div>
                 <div className={styles.right}>
                     <div className={styles.CounterWrap}>

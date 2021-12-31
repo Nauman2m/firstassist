@@ -13,7 +13,7 @@ const LeftContentRightImage = () => {
                         <p>First Assist, a registered Canadian charity, partners directly with indigenous communities to develop education programs that teach transferable life skills proven to improve school attendance and graduation rates. Indigenous communities, including children, have unfair and unnecessary disparities in health, education, and opportunities. First Assist indigenous programs help change the statistics while emphasizing cultural preservation.</p>
                     </div>
                     <div>
-                        <Button type="link" href="/" text="Get Your Community or Child Involved" />
+                        <Button type="link" internal={true} href="/join-us/" text="Get Your Community or Child Involved" />
                     </div>
                 </div>
                 <div className={styles.right}>

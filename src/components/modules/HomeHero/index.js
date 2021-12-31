@@ -90,7 +90,7 @@ const HomeHero = () => {
                     </div>
                     <div className={styles.Cta}>
                         <div className={styles.btnContainer}>
-                            <Button type="link" href="/" text="Join Us Today" />
+                            <Button type="link" internal={true} href="/join-us/" text="Join Us Today" />
                         </div>
                         <div className={styles.CnContainer}>
                             <p>

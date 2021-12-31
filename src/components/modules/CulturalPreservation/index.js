@@ -23,7 +23,7 @@ const CulturalPreservation = () => {
                             <li>We consult with local Elders & cultural departments to be sure our programs honor local heritage.</li>
                             <li>Wherever possible, we integrate cultural components and celebrations into our programs, for the enjoyment of the participants and for the indigenous education of our organization, employees, and volunteers.</li>
                         </ul>
-                        <Button type="link" href="/" text="Join With Us" />
+                        <Button type="link" internal={true} href="/join-us/" text="Join With Us" />
                     </div>
                 </div>
             </div>

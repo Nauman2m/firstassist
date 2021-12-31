@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import { StaticImage } from "gatsby-plugin-image";
 import React from 'react';
 import * as styles from './LogoFlex.module.scss';
@@ -19,7 +20,7 @@ const LogoFlex = () => {
                     <StaticImage className={styles.logo} src="../../../images/scotiabank.png" alt="Logo Flex" />
                 </div>
                 <div className={styles.bottom}>
-                    <a href="#">Partner With Us</a>
+                    <Link to="/join-us/">Partner With Us</Link>
                 </div>
             </div>
         </div>

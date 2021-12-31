@@ -56,7 +56,7 @@
             font-size: 15px;
             font-weight: 700;
             white-space: nowrap;
-            padding-inline: 35px 12px;
+            padding-inline: 20px 12px;
             color: rgb(34, 34, 34);
             text-decoration: none;
             height: 100%;
@@ -67,6 +67,7 @@
             border: none;
             background: none;
             padding: 0;
+            margin-left: -6px;
           }
         }
       }
@@ -89,7 +90,7 @@
             justify-content: space-between;
             a {
               font-size: 18px;
-              padding-inline: 0 12px;
+              padding-inline: 12px;
               padding-top: 20px;
             }
             button {

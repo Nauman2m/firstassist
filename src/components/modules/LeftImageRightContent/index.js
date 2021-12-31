@@ -24,7 +24,7 @@ const LeftImageRightContent = () => {
                         <p>that focuses on the implementation of indigenous education programs that have the potential to change lives. We work with communities to develop programming that teaches transferable life skills proven to improve school attendance and graduation rates.</p>
                     </div>
                     <div>
-                        <Button type="link" href="/" text="More About Us" />
+                        <Button type="link" internal={true} href="/join-us/" text="More About Us" />
                     </div>
                 </div>
                 

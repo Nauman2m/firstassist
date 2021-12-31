@@ -36,7 +36,7 @@ const CharitableOrganization = () => {
                             <li>Fewer health issues and lower health-related costs</li>
                             <li>More opportunities for workplace advancement</li>
                         </ul>
-                        <Button type="link" href="/" text="Join With Us" />
+                        <Button type="link" internal={true} href="/join-us/" text="Join With Us" />
                     </div>
                 </div>
                 <div className={styles.CurveBottom}>

@@ -85,7 +85,7 @@ const OurApproachTabbed = () => {
                             <div className={styles.box}>
                                 <h3>{items[CurrentItem].title}</h3>
                                 <p>{items[CurrentItem].text}</p>
-                                <Button type="link" href="/" text="Join Us Today" />
+                                <Button type="link" internal={true} href="/join-us/" text="Join Us Today" />
                             </div>
                         </div>
                     </div>

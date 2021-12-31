@@ -61,16 +61,30 @@ const MapSection = () => {
                             {
                                 Locations.map((item, index) => {
                                     return (
-                                        <button 
-                                            key={index} 
-                                            onClick={() => TriggerPin(item.id)}
-                                            onMouseEnter={!mobileScreen ? TriggerHovered : () => false}
-                                            onMouseLeave={!mobileScreen ? TriggerHovered : () => false}
-                                            className={`${styles.pin} ${pin === item.id ? styles.active : ''}`} 
-                                            style={{transform: `${!mobileScreen ? item?.pin : item?.pinM}`}}
-                                        >
-                                            <img width={10} height={10} src="/images/user-location.svg" alt="Pin" />
-                                        </button>
+                                        <>
+                                            <div className={`${styles.info2} ${pin === item.id ? styles.active : ''}`}  style={{transform: `translate(calc(${item.x} - 45%), calc(${item.y} - 108%))`}}>
+                                                <div className={styles.head}>
+                                                    <button onClick={() => setPin(null)}></button>
+                                                </div>
+                                                <div className={styles.content}>
+                                                    <h5>{item?.title}</h5>
+                                                    <p>Population: {item?.population}<br />
+                                                        Youth Participants: {item?.participants}<br/>
+                                                        Program: {item?.program}<br/>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <button 
+                                                key={index} 
+                                                onClick={() => TriggerPin(item.id)}
+                                                onMouseEnter={!mobileScreen ? TriggerHovered : () => false}
+                                                onMouseLeave={!mobileScreen ? TriggerHovered : () => false}
+                                                className={`${styles.pin} ${pin === item.id ? styles.active : ''}`} 
+                                                style={{transform: `${!mobileScreen ? item?.pin : item?.pinM}`}}
+                                            >
+                                                <img width={10} height={10} src="/images/user-location.svg" alt="Pin" />
+                                            </button>
+                                        </>
                                     )
                                 })
                             }
@@ -95,7 +109,7 @@ const MapSection = () => {
                     </div>
                 </div>
                 <div className={styles.Cta}>
-                    <Button type="link" href="/" text="Learn About Virtual Experiences" />
+                    <Button type="link" internal={true} href="/join-us/" text="Learn About Virtual Experiences" />
                 </div>
             </div>
         </div>

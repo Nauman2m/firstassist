@@ -7,6 +7,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(522.467px, 502.464px)',
         pinM: 'translate(221.057px, 212.485px)',
+        x: '522.467px',
+        y: '502.464px',
     },
     {
         id: 1,
@@ -16,6 +18,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(112.19px, 317.75px)',
         pinM: 'translate(45.2242px, 133.322px)',
+        x: '112.19px',
+        y: '317.75px',
     },
     {
         id: 2,
@@ -25,6 +29,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(385.777px, 327.95px)',
         pinM: 'translate(160.762px, 137.693px)',
+        x: '385.777px',
+        y: '327.95px',
     },
     {
         id: 3,
@@ -34,6 +40,8 @@ const Locations = [
         program: 'Capacity and Health Programs',
         pin: 'translate(501.943px, 446.6px)',
         pinM: 'translate(212.261px, 188.543px)',
+        x: '501.943px',
+        y: '446.6px',
     },
     {
         id: 4,
@@ -43,6 +51,8 @@ const Locations = [
         program: 'Full Sports Academy Program',
         pin: 'translate(503.234px, 452.665px)',
         pinM: 'translate(212.815px, 191.142px)',
+        x: '503.234px',
+        y: '452.665px',
     },
     {
         id: 5,
@@ -52,6 +62,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(542.711px, 470.859px)',
         pinM: 'translate(229.733px, 198.939px)',
+        x: '542.711px',
+        y: '470.859px',
     },
     {
         id: 6,
@@ -61,6 +73,8 @@ const Locations = [
         program: 'Full Program',
         pin: 'translate(524.18px, 466.31px)',
         pinM: 'translate(221.791px, 196.99px)',
+        x: '524.18px',
+        y: '466.31px',
     },
     {
         id: 7,
@@ -70,6 +84,8 @@ const Locations = [
         program: 'Full Program',
         pin: 'translate(517.721px, 478.047px)',
         pinM: 'translate(219.023px, 202.02px)',
+        x: '517.721px',
+        y: '478.047px',
     },
     {
         id: 8,
@@ -79,6 +95,8 @@ const Locations = [
         program: 'Full Program',
         pin: 'translate(496.833px, 409.837px)',
         pinM: 'translate(210.071px, 172.787px)',
+        x: '496.833px',
+        y: '409.837px',
     },
     {
         id: 9,
@@ -88,6 +106,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(199.001px, 279.491px)',
         pinM: 'translate(82.429px, 116.925px)',
+        x: '199.001px',
+        y: '279.491px',
     },
     {
         id: 10,
@@ -97,6 +117,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(244.092px, 320.538px)',
         pinM: 'translate(101.754px, 134.516px)',
+        x: '244.092px',
+        y: '320.538px',
     },
     {
         id: 11,
@@ -106,6 +128,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(635.529px, 479.747px)',
         pinM: 'translate(269.513px, 202.749px)',
+        x: '635.529px',
+        y: '479.747px',
     },
     {
         id: 12,
@@ -115,6 +139,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(506.379px, 322.744px)',
         pinM: 'translate(214.162px, 135.462px)',
+        x: '506.379px',
+        y: '322.744px',
     },
     {
         id: 13,
@@ -124,6 +150,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(519.407px, 333.228px)',
         pinM: 'translate(219.746px, 139.955px)',
+        x: '519.407px',
+        y: '333.228px',
     },
     {
         id: 14,
@@ -133,6 +161,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(102.532px, 303.147px)',
         pinM: 'translate(41.085px, 127.063px)',
+        x: '102.532px',
+        y: '303.147px',
     },
     {
         id: 15,
@@ -142,6 +172,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(645.638px, 479.786px)',
         pinM: 'translate(273.845px, 202.766px)',
+        x: '645.638px',
+        y: '479.786px',
     },
     {
         id: 16,
@@ -151,6 +183,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(132.966px, 332.162px)',
         pinM: 'translate(54.1284px, 139.498px)',
+        x: '132.966px',
+        y: '332.162px',
     },
     {
         id: 17,
@@ -160,6 +194,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(229.941px, 335.419px)',
         pinM: 'translate(95.6889px, 140.894px)',
+        x: '229.941px',
+        y: '335.419px',
     },
     {
         id: 18,
@@ -169,6 +205,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(96.9726px, 292.76px)',
         pinM: 'translate(38.7025px, 122.611px)',
+        x: '96.9726px',
+        y: '292.76px',
     },
     {
         id: 19,
@@ -178,6 +216,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(316.865px, 401.47px)',
         pinM: 'translate(132.942px, 169.201px)',
+        x: '316.865px',
+        y: '401.47px',
     },
     {
         id: 20,
@@ -187,6 +227,8 @@ const Locations = [
         program: 'Full Program',
         pin: 'translate(518.115px, 473.683px)',
         pinM: 'translate(219.192px, 200.15px)',
+        x: '518.115px',
+        y: '473.683px',
     },
     {
         id: 21,
@@ -196,6 +238,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(482.627px, 356.099px)',
         pinM: 'translate(203.983px, 149.757px)',
+        x: '482.627px',
+        y: '356.099px',
     },
     {
         id: 22,
@@ -205,6 +249,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(519.912px, 329.29px)',
         pinM: 'translate(219.962px, 138.267px)',
+        x: '519.912px',
+        y: '329.29px',
     },
     {
         id: 23,
@@ -214,6 +260,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(132.012px, 296.722px)',
         pinM: 'translate(53.7193px, 124.309px)',
+        x: '132.012px',
+        y: '296.722px',
     },
     {
         id: 24,
@@ -223,6 +271,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(99.668px, 297.621px)',
         pinM: 'translate(39.8577px, 124.695px)',
+        x: '99.668px',
+        y: '297.621px',
     },
     {
         id: 25,
@@ -232,6 +282,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(531.424px, 351.439px)',
         pinM: 'translate(224.896px, 147.759px)',
+        x: '531.424px',
+        y: '351.439px',
     },
     {
         id: 26,
@@ -241,6 +293,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(182.043px, 214.691px)',
         pinM: 'translate(75.1614px, 89.1534px)',
+        x: '182.043px',
+        y: '214.691px',
     },
     {
         id: 27,
@@ -250,6 +304,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(253.413px, 222.344px)',
         pinM: 'translate(105.748px, 92.433px)',
+        x: '253.413px',
+        y: '222.344px',
     },
     {
         id: 28,
@@ -259,6 +315,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(499.922px, 400.461px)',
         pinM: 'translate(211.395px, 168.769px)',
+        x: '499.922px',
+        y: '400.461px',
     },
     {
         id: 29,
@@ -268,6 +326,8 @@ const Locations = [
         program: 'Launching in Fall 2020',
         pin: 'translate(378.408px, 326.901px)',
         pinM: 'translate(159.318px, 137.243px)',
+        x: '378.408px',
+        y: '326.901px',
     },
 ]
 

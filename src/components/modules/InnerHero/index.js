@@ -12,7 +12,7 @@ const InnerHero = ({HeroBg, title, Desc}) => {
             <div className={styles.content}>
                 <h1>{title}</h1>
                 {Desc && <p>{Desc}</p>}
-                <Button type="link" href="/" text="Join Us Today" />
+                <Button type="link" internal={true} href="/join-us/" text="Join Us Today" />
             </div>
             <div className={styles.BgImageShape}>
                 <svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" width="1943" height="98.812" viewBox="0 0 1943 98.812" preserveAspectRatio="none">
