@@ -30,20 +30,21 @@
           .LocsWrap {
             position: relative;
             max-height: 586px;
+            :global(.simplebar-scrollbar) {
+              &::before {
+                display: none;
+              }
+            }
             &.customScrollBar {
-              :global(.simplebar-vertical) {
+              :global(.simplebar-track) {
                 background: rgba(0, 0, 0, 0.25);
                 width: 10px;
-                transition: 0.3s;
                 border-radius: 5px;
               }
               :global(.simplebar-scrollbar) {
                 background: rgba(0, 0, 0, 0.5);
                 margin: 0 1px;
                 border-radius: 3px;
-                &::before {
-                  display: none;
-                }
               }
             }
             ul {
