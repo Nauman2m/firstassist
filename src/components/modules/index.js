@@ -5,6 +5,7 @@ export { default as ImageBoxGrid } from './ImageBoxGrid';
 export { default as ImageFlex } from './ImageFlex';
 export { default as IndigenousPrograms } from './IndigenousPrograms';
 export { default as InnerHero } from './InnerHero';
+export { default as LeftAccordionRightImage } from './LeftAccordionRightImage';
 export { default as LeftContentRightImage } from './LeftContentRightImage';
 export { default as LeftImageRightContent } from './LeftImageRightContent';
 export { default as LogoFlex } from './LogoFlex';

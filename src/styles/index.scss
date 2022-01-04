@@ -1,6 +1,9 @@
 @import "src/styles/fonts";
 @import "src/styles/colors";
 @import "src/styles/bp";
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;

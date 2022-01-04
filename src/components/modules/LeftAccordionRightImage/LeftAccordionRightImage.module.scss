@@ -1,0 +1,62 @@
+@import "src/styles/colors";
+.LeftAccordionRightImage {
+  margin-block: 60px 80px;
+  .wrap {
+    max-width: 1240px;
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    .top {
+      width: 100%;
+      padding-bottom: 30px;
+    }
+    .left {
+      width: 50%;
+      padding-inline-end: 30px;
+      .accordionItem {
+        button {
+          display: block;
+          width: 100%;
+          text-align: start;
+          padding-left: 0;
+          padding-block: 0.65em;
+          background: none;
+          border: none;
+          color: $color-primary;
+          border-bottom: 1px solid #dadde1;
+          font-size: 18px;
+          padding-right: 0;
+          line-height: 1.6;
+          font-weight: 500;
+          cursor: pointer;
+          svg {
+            float: right;
+            font-size: 14px;
+            margin-top: 0.65em;
+            transition: all 0.2s ease-out;
+          }
+          &[aria-expanded="true"] {
+            svg {
+              transform: rotate(90deg);
+            }
+          }
+        }
+        .text {
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.2s ease-out;
+          .content {
+            margin-top: 0.65em;
+          }
+        }
+      }
+    }
+    .right {
+      width: 50%;
+      .Image {
+        display: block;
+        border-radius: 20px;
+      }
+    }
+  }
+}
