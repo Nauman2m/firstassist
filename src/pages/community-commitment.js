@@ -22,7 +22,7 @@ const CommunityCommitment = () => {
                 gatsbyImageData
             }
         }
-        img3: file(relativePath: { eq: "Education.jpg" }) {
+        img3: file(relativePath: { eq: "education-charity.jpg" }) {
             childImageSharp {
                 gatsbyImageData
             }
@@ -79,10 +79,10 @@ const CommunityCommitment = () => {
   ]
   return (
     <Layouts path="/about" title="Community Commitment" description="">
-      <InnerHero HeroBg={data.HeroBg} title="Community Commitment" Desc="First Assist operates using a Community Partnership Model that puts indigenous communities in the driver’s seat of their programming. We are truly partners with the indigenous communities we work with. We believe this commitment to community and cultural preservation while prioritizing the needs and desires of each individual community sets us apart and makes us an organization our donors and participants are proud to work with." />
-    <OurApproachTabbed />
-    <ImageBoxGrid Items={Items} title="Community Needs Identification" beforeTitle="Identification" grid3={true} />
-    <LeftAccordionRightImage />
+        <InnerHero HeroBg={data.HeroBg} title="Community Commitment" Desc="First Assist operates using a Community Partnership Model that puts indigenous communities in the driver’s seat of their programming. We are truly partners with the indigenous communities we work with. We believe this commitment to community and cultural preservation while prioritizing the needs and desires of each individual community sets us apart and makes us an organization our donors and participants are proud to work with." />
+        <OurApproachTabbed />
+        <ImageBoxGrid Items={Items} title="Community Needs Identification" beforeTitle="Identification" grid3={true} />
+        <LeftAccordionRightImage />
     </Layouts>
   )
 }

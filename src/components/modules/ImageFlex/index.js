@@ -7,10 +7,10 @@ const ImageFlex = () => {
 
     return (
         <Marquee className={styles.ImageFlex} style={{}}>
+            <StaticImage className={`${styles.image} m-img`} src="../../../images/RapidLake15.jpg" alt="02" />
             <StaticImage className={`${styles.image} m-img`} src="../../../images/01.jpg" alt="01" />
-            <StaticImage className={`${styles.image} m-img`} src="../../../images/02.jpg" alt="02" />
-            <StaticImage className={`${styles.image} m-img`} src="../../../images/03.jpg" alt="03" />
-            <StaticImage className={`${styles.image} m-img`} src="../../../images/04.jpg" alt="04" />
+            <StaticImage className={`${styles.image} m-img`} src="../../../images/flex-2.jpg" alt="03" />
+            <StaticImage className={`${styles.image} m-img`} src="../../../images/flex-1.jpg" alt="04" />
         </Marquee>
     )
 }

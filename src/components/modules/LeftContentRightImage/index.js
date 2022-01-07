@@ -17,7 +17,7 @@ const LeftContentRightImage = () => {
                     </div>
                 </div>
                 <div className={styles.right}>
-                    <StaticImage className={styles.img} src="../../../images/we-do.jpeg" alt="who we are" />
+                    <StaticImage className={styles.img} src="../../../images/what-we-do-firstassist.jpg" alt="who we are" />
                 </div>
             </div>
         </div>

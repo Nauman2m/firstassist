@@ -19,7 +19,7 @@ const OurApproachTabbed = () => {
                     gatsbyImageData
                 }
             }
-            img2: file(relativePath: { eq: "Holistic-Approach.jpeg" }) {
+            img2: file(relativePath: { eq: "Holistic-Approach.jpg" }) {
                 childImageSharp {
                     gatsbyImageData
                 }
@@ -29,7 +29,7 @@ const OurApproachTabbed = () => {
                     gatsbyImageData
                 }
             }
-            img4: file(relativePath: { eq: "programs-and-development.jpeg" }) {
+            img4: file(relativePath: { eq: "Results-Based-And-Results-Driven.jpg" }) {
                 childImageSharp {
                     gatsbyImageData
                 }

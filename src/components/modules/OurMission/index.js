@@ -31,7 +31,7 @@ const OurMission = () => {
         <div ref={OurMissionWrap} className={styles.OurMission}>
             <div className={styles.left}>
                 <div ref={OurMissionImg}>
-                    <StaticImage className={styles.img} src="../../../images/first-assist-mission.jpeg" alt="first-assist-mission" />
+                    <StaticImage className={styles.img} src="../../../images/first-assist-mission.jpg" alt="first-assist-mission" />
                 </div>
             </div>
             <div className={styles.right}>

@@ -6,7 +6,7 @@ import { CharitableOrganization, CulturalPreservation, HomeHero, ImageBoxGrid, I
 const Page = () => {
   const data = useStaticQuery(graphql`
     query {
-        img1: file(relativePath: { eq: "charity-education.jpeg" }) {
+        img1: file(relativePath: { eq: "education-charity.jpg" }) {
             childImageSharp {
                 gatsbyImageData
             }
@@ -21,7 +21,7 @@ const Page = () => {
                 gatsbyImageData
             }
         }
-        img4: file(relativePath: { eq: "sports-charity.jpg" }) {
+        img4: file(relativePath: { eq: "sports.jpg" }) {
             childImageSharp {
                 gatsbyImageData
             }
