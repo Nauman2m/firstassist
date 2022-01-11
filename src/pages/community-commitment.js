@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import Layouts from '../components/Layouts';
-import { ImageBoxGrid, InnerHero, LeftAccordionRightImage, OurApproachTabbed } from '../components/modules';
+import { ConsultForm, ImageBoxGrid, InnerHero, LeftAccordionRightImage, OurApproachTabbed } from '../components/modules';
 
 const CommunityCommitment = () => {
   
@@ -83,6 +83,7 @@ const CommunityCommitment = () => {
         <OurApproachTabbed />
         <ImageBoxGrid Items={Items} title="Community Needs Identification" beforeTitle="Identification" grid3={true} />
         <LeftAccordionRightImage />
+        <ConsultForm />
     </Layouts>
   )
 }

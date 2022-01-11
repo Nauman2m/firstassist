@@ -1,4 +1,5 @@
 export { default as CharitableOrganization } from './CharitableOrganization';
+export { default as ConsultForm } from './ConsultForm';
 export { default as CulturalPreservation } from './CulturalPreservation';
 export { default as HomeHero } from './HomeHero';
 export { default as ImageBoxGrid } from './ImageBoxGrid';
