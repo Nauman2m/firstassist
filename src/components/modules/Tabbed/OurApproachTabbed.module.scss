@@ -71,6 +71,31 @@
           p {
             margin-bottom: 30px;
           }
+          ul {
+            padding-left: 15px;
+          }
+          table {
+            width: 100%;
+            border: 1px solid #dedede;
+            margin-bottom: 30px;
+            td:not(:last-child),
+            th:not(:last-child) {
+              border-inline-end: 1px solid #dedede;
+              padding-top: 0.8em;
+              padding-bottom: 0.8em;
+              padding: 0.5em 1em;
+            }
+            tr {
+              th {
+                border-block-end: 1px solid #dedede;
+              }
+              &:not(:last-child) {
+                td {
+                  border-block-end: 1px solid #dedede;
+                }
+              }
+            }
+          }
         }
       }
     }

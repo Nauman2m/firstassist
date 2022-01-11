@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import Layouts from '../components/Layouts';
-import { ConsultForm, ImageBoxGrid, InnerHero, LeftAccordionRightImage, Tabbed } from '../components/modules';
+import { ImageBoxGrid, InnerHero, LeftAccordionRightImage, Tabbed } from '../components/modules';
 
 const accordionItem = [
     {
@@ -34,11 +34,11 @@ const accordionItem = [
     },
 ]
 
-const CommunityCommitment = () => {
+const Sport = () => {
   
   const data = useStaticQuery(graphql`
     query {
-        HeroBg: file(relativePath: { eq: "community-first.jpeg" }) {
+        HeroBg: file(relativePath: { eq: "sport-first-assist.jpg" }) {
             childImageSharp {
                 gatsbyImageData
             }
@@ -58,42 +58,27 @@ const CommunityCommitment = () => {
                 gatsbyImageData
             }
         }
-        img4: file(relativePath: { eq: "Community-Needs-Assessment.jpeg" }) {
-            childImageSharp {
-                gatsbyImageData
-            }
-        }
-        img5: file(relativePath: { eq: "Coaching-and-Instructors.jpg" }) {
-            childImageSharp {
-                gatsbyImageData
-            }
-        }
-        img6: file(relativePath: { eq: "Community-Involvement.jpg" }) {
-            childImageSharp {
-                gatsbyImageData
-            }
-        }
         AccordionImage: file(relativePath: { eq: "Implementation.jpeg" }) {
             childImageSharp {
                 gatsbyImageData
             }
         }
-        tabimg1: file(relativePath: { eq: "community.jpeg" }) {
+        tabimg1: file(relativePath: { eq: "Creation-Of-Health-Habits.jpeg" }) {
             childImageSharp {
                 gatsbyImageData
             }
         }
-        tabimg2: file(relativePath: { eq: "Holistic-Approach.jpg" }) {
+        tabimg2: file(relativePath: { eq: "Positive-Outlet.jpeg" }) {
             childImageSharp {
                 gatsbyImageData
             }
         }
-        tabimg3: file(relativePath: { eq: "Cultural-Preservation.jpeg" }) {
+        tabimg3: file(relativePath: { eq: "Health-Issues-Concerns.jpeg" }) {
             childImageSharp {
                 gatsbyImageData
             }
         }
-        tabimg4: file(relativePath: { eq: "Results-Based-And-Results-Driven.jpg" }) {
+        tabimg4: file(relativePath: { eq: "Partnership-With-Local-Health-Board.jpeg" }) {
             childImageSharp {
                 gatsbyImageData
             }
@@ -115,60 +100,45 @@ const CommunityCommitment = () => {
     {
         title: 'Community Needs Assessment',
         text: 'First Assist works with local governing bodies to listen to the community’s areas of concern and develop a community-specific action plan.',
-        img: data?.img4,
-    },
-    {
-        title: 'Community Involvement',
-        text: 'Local involvement and support are fundamental towards children’s success in both academic and athletic achievements. First Assist makes opportunities to involve community members and provide opportunities for us to work together, so we gain experience for everyone to better serve indigenous communities.',
-        img: data?.img6,
-    },
-    {
-        title: 'Coaching and Instructors',
-        text: 'We bring suitable staff and train local community members to implement and monitor the development of practice planning and coaching strategies.',
-        img: data?.img5,
-    },
-    {
-        title: 'Education',
-        text: 'We work alongside local schools to investigate areas of systemic deficiencies in attendance and graduation rates and compare them to national averages and statistics.',
         img: data?.img3,
-    },
+    }
   ]
+
   const tabitems = [
     {
-        button: 'Collaborative',
-        title: 'Collaborative & Consultative',
-        text: '<p>First Assist uses a collaborative approach. We implement our programs based on each Community’s Needs Analysis. We consult with multiple local community members and entities to identify issues impacting the community. Then, we invite community members to work in partnership with our instructors to further support and encourage youth to reach their goals in both school and sport.</p>',
+        button: 'Habits',
+        title: 'Creation Of Health Habits',
+        text: '<p>In the development of all our programs, we consult with the local community to target specific healthy habits the community would like the program to reinforce. These habits are created and reinforced through subliminal and cognizant policies, procedures and tools.</p>',
         img: data?.tabimg1
     },
     {
-        button: 'Holistic',
-        title: 'Holistic Approach',
-        text: '<p>Our programming introduces a 360-degree, holistic approach to improving student outcomes. Our four pillars are Education, Health, Capacity Building, and Sport. Each pillar is delivered in a set sequence depending on the Community Needs Assessment.</p>',
+        button: 'Outlet',
+        title: 'Positive Outlet',
+        text: '<p>Our sports and learning environment are structured to provide a positive vice for youth to release any negative energy from issues or situations that transpired throughout their day. This message is reiterated to all participants especially when there are momentary behavioral issues from the youth participants.</p>',
         img: data?.tabimg2
     },
     {
-        button: 'Cultural',
-        title: 'Cultural Preservation',
-        text: '<p>Cultural Preservation is at the forefront of our approach. We ensure the main messages of our program are delivered through the local dialect by using local mentors. We consult with local Elders & cultural departments to implement collaborative programs that honour the local heritage and integrate cultural components wherever possible.</p>',
+        button: 'Concerns',
+        title: 'Health Issues Concerns',
+        text: '<p>First Assist is cognizant of major health concerns for individuals in the communities we work with. Our program integrations unique to each community that are focused on the mental and physical well-being of our participants. Dependent on the community, youth have to deal a wide variety of health issues: lack of healthy food options, diabetes, drug and alcohol abuse, mental health, emotional support and many others.</p>',
         img: data?.tabimg3
     },
     {
-        button: 'Results',
-        title: 'Results-Based And Results-Driven',
-        text: '<p>Above all else, First Assist programs are results-based and results-driven. We create measurable goals and implement statistical monitoring to ensure the proper implementation of our programs and the development of our participants.</p>',
+        button: 'Partnership',
+        title: 'Partnership With Local Health Board',
+        text: '<p>By establishing a partnership with local social workers, nutritionists and health board we can offer each participant health documentation up to four times per programming year. These standardized health protocols can include but are not limited to:</p> <table><thead> <tr> <th>WEIGHT</th> <th>HEIGHT</th> </tr> </thead> <tbody> <tr> <td>BMI</td> <td>Resting Heart Rate</td> </tr> <tr> <td>Waist Circumference</td> <td>Active and Cool Down Heart Rate</td> </tr> <tr> <td>Blood Glucose</td> <td></td> </tr> <tr> <td>Blood Pressure</td> <td></td> </tr> </tbody> </table> <p>First Assist can also include additional health programs depending on the Community Needs Assessment, including but not limited to:</p> <ul> <li>Data analysis based on participant growth and maturation stages</li> <li>Anti-bullying policies and programming, including appropriate uses of social media</li> <li>Nutritional information sessions and meal preparation</li> </ul>',
         img: data?.tabimg4
     },
   ]
 
   return (
-    <Layouts path="/about" title="Community Commitment" description="">
-        <InnerHero HeroBg={data.HeroBg} title="Community Commitment" Desc="First Assist operates using a Community Partnership Model that puts indigenous communities in the driver’s seat of their programming. We are truly partners with the indigenous communities we work with. We believe this commitment to community and cultural preservation while prioritizing the needs and desires of each individual community sets us apart and makes us an organization our donors and participants are proud to work with." />
-        <Tabbed tabitems={tabitems} title={<h2 className="UnderLine">Our <span>Approach</span></h2>} />
-        <ImageBoxGrid Items={Items} title="Community Needs Identification" beforeTitle="Identification" grid3={true} />
-        <LeftAccordionRightImage accordionItem={accordionItem} title="Implementation" image={data.AccordionImage} />
-        <ConsultForm />
+    <Layouts path="/about" title="Sport" description="">
+        <InnerHero HeroBg={data.HeroBg} title="Sport" />
+        <Tabbed tabitems={tabitems} title={<h2 className="UnderLine"><span>Health</span></h2>} />
+        <ImageBoxGrid Items={Items} title="Capacity Building" beforeTitle="Capacity" grid3={true} />
+        <LeftAccordionRightImage accordionItem={accordionItem} title="Sport" image={data.AccordionImage} />
     </Layouts>
   )
 }
 
-export default CommunityCommitment
+export default Sport
