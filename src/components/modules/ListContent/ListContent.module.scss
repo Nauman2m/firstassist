@@ -1,0 +1,20 @@
+.ListContent {
+  margin-top: 80px;
+  .wrap {
+    max-width: 1240px;
+    margin-inline: auto;
+    p {
+      width: 70%;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        svg {
+          color: #fc2d2d;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

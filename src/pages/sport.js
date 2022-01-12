@@ -1,37 +1,25 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import Layouts from '../components/Layouts';
-import { ImageBoxGrid, InnerHero, LeftAccordionRightImage, Tabbed } from '../components/modules';
+import { ImageBox, ImageBoxGrid, ImageContentFlex, InnerHero, LeftAccordionRightImage, ListContent, SliderTopContentBottomImage, Tabbed } from '../components/modules';
 
 const accordionItem = [
     {
-        title: 'Proactive Opposed To Reactive',
-        text: 'First Assist proactively addresses long-term education and health issues by promoting healthy habits for life. Our goal is to have all participants graduate from secondary school. We provide coping tools, goal setting exercises, and positive reinforcement to encourage and lead our participants to that end.'
+        title: 'Structured And Unstructured Play Focused On The Development Of Healthy Habits',
+        text: '<p>Participation in sports and activities help develop habits, and First Assist programming helps participants continually shape and develop positive habits. We integrate policies, procedures, and tools that are directly aimed at establishing new and consistent behavioral responses the community has identified as lacking.</p>'
     },
     {
-        title: 'Quality & Qualified Teachers & Coaches',
-        text: 'Our teachers  and coaches must have a history of being great role models within their own communities and exemplify the “3 Cs of Our Internal Culture: Compassionate, Considerate and Communicative.” All teachers have qualifications in their respective provinces. All coaches have qualifications in their respective sports. Most of all, all staff are proven role models and actively engage youth and community in their personal lives. We believe our organization is only as strong as each of our team members.'
+        title: 'Development Based On The Indigenous LTPDP',
+        text: '<p>First Assist programs are based on the indigenous Long-Term Participant Development Pathway.Sport for Life defines the indigenous LTPDP as a “roadmap for developing sport and physical activity among indigenous peoples,” and is a “reference for those who work with indigenous participants in sport and recreation.” It has grown out of the understanding that mainstream models for sport development do not necessarily align with indigenous needs or experiences.</p> <p>As such, this document tries to address that gap by “outlining the key elements that need to be considered when planning, developing, and implementing programs for and with indigenous peoples and communities.”</p> <p>For more information please visit: <a href="https://sportforlife.ca/portfolio-view/indigenous-long-term-participant-development-pathway">https://sportforlife.ca/portfolio-view/indigenous-long-term-participant-development-pathway</a></p>'
     },
     {
-        title: 'Engagement Of Youth And Community',
-        text: 'We believe the success of youth is directly related to the involvement of the community. We partner with community members and encourage community involvement in our programs so the entire community can benefit and take responsibility for the success of our programs. Every person that takes part in our program can benefit from it, so the entire community has the opportunity to become healthier and develop lifelong skills.'
+        title: 'Multi-Stage Development Plan',
+        text: '<p>First Assist uses a Multi-Stage Development Plan. This development plan uses sport-specific programming based on age-appropriate skills implementation. Our certified instructors provide skill checklists and manuals that are delivered to a community based on 6-week, 12-week, 24-week, 32-week, and full school year progressions.</p>'
     },
     {
-        title: 'Empowerment Through Leadership',
-        text: 'Leadership training workshops and curriculum development allow local interns to develop the skills to engage and monitor local participants. The end goal is self-sufficient programming; we want to be able to leave a community and allow local leaders to continue to run our program with equal levels of success.'
-    },
-    {
-        title: 'Skills Transfer',
-        text: 'We want to provide community members with skills and strategies to teach and coach in their respective sport, so communities can continue to grow and establish sports programs in their towns.'
-    },
-    {
-        title: 'Quality Tools & Process',
-        text: 'We have built a number of different tools to enhance our program and integrative processes. We’ve developed an app and use technology tools to help participants adapt to new learning methodology pertinent to engaging youth. We continuously reinforce a positive learning environment and use tools to track individual and group progress.'
-    },
-    {
-        title: 'Feedback & Reiteration',
-        text: 'Throughout all program stages, we gather feedback, actively and passively to learn, and adapt the program to fit community needs. We generate monthly reports and host local meetings to be sure we’re meeting and exceeding the community&apos;s expectations.'
-    },
+        title: 'Certified And Qualified Instructors',
+        text: '<p>All First Assist staff have qualifications in their respective sports, are CPR & First Aid certified, and have completed the Aboriginal Coaching Modules. Most importantly they are people of quality character who engage with the local community to embrace our active lifestyle and education first initiative.</p>'
+    }
 ]
 
 const Sport = () => {
@@ -43,22 +31,22 @@ const Sport = () => {
                 gatsbyImageData
             }
         }
-        img1: file(relativePath: { eq: "multi-stage-programs.jpg" }) {
+        img1: file(relativePath: { eq: "Local-Staff.jpeg" }) {
             childImageSharp {
                 gatsbyImageData
             }
         }
-        img2: file(relativePath: { eq: "Health.jpg" }) {
+        img2: file(relativePath: { eq: "Seasonal-Planning.jpeg" }) {
             childImageSharp {
                 gatsbyImageData
             }
         }
-        img3: file(relativePath: { eq: "education-charity.jpg" }) {
+        img3: file(relativePath: { eq: "Youth-Leadership.jpeg" }) {
             childImageSharp {
                 gatsbyImageData
             }
         }
-        AccordionImage: file(relativePath: { eq: "Implementation.jpeg" }) {
+        AccordionImage: file(relativePath: { eq: "first-assist-sport.jpeg" }) {
             childImageSharp {
                 gatsbyImageData
             }
@@ -83,24 +71,34 @@ const Sport = () => {
                 gatsbyImageData
             }
         }
+        selfSustainable: file(relativePath: { eq: "Self-Sustainable-Programming.jpeg" }) {
+            childImageSharp {
+                gatsbyImageData
+            }
+        }
+        YouthWorkshops: file(relativePath: { eq: "Youth-Workshops.jpeg" }) {
+            childImageSharp {
+                gatsbyImageData
+            }
+        }
     }
   `)
 
   const Items = [
     {
-        title: 'Health',
-        text: 'First Assist takes proactive measures to help youth in indigenous communities build healthy habits that contribute to productive and meaningful futures.',
-        img: data?.img2,
+        title: 'Youth Leadership',
+        text: 'We identify leaders both in sport and in school. These youth serve as mentors for younger players as they help and learn from the First Assist instructors.',
+        img: data?.img3,
     },
     {
-        title: 'Programming',
-        text: 'We implement a full season of multi-stage programs that incorporate elements to support and strengthen mental, emotional, and physical well-being.',
+        title: 'Local Staff',
+        text: 'We work with local coaches and instructors both on and off the playing field to develop age-appropriate skills and strategies. Confidence and self-esteem building, as well as leadership skills development, are vital components of First Assist programming.',
         img: data?.img1,
     },
     {
-        title: 'Community Needs Assessment',
-        text: 'First Assist works with local governing bodies to listen to the community’s areas of concern and develop a community-specific action plan.',
-        img: data?.img3,
+        title: 'Seasonal Planning',
+        text: 'We provide sport-specific programming manuals for progression-based learning and multi-stage development. We engage local participants through structured full season practice plans that are easily downloaded and run with our App.',
+        img: data?.img2,
     }
   ]
 
@@ -133,10 +131,24 @@ const Sport = () => {
 
   return (
     <Layouts path="/about" title="Sport" description="">
+
         <InnerHero HeroBg={data.HeroBg} title="Sport" />
+
         <Tabbed tabitems={tabitems} title={<h2 className="UnderLine"><span>Health</span></h2>} />
+
         <ImageBoxGrid Items={Items} title="Capacity Building" beforeTitle="Capacity" grid3={true} />
-        <LeftAccordionRightImage accordionItem={accordionItem} title="Sport" image={data.AccordionImage} />
+
+        <ImageContentFlex title={<h2 className="UnderLine">Self-Sustainable <span style={{display: 'inline-block'}}>Programming</span></h2>} content="First Assist works with youth and community members in order to establish local capacity for training and programming methods. The end goal is self-sustainable programming through our coaching and instructor mentorship program. Our team members pass on their knowledge and skill sets to members of the community, empowering them to become instructors and coaches to their own local youth for years to come." image={data.selfSustainable} reverce={true} />
+
+        <ImageContentFlex title={<h2 className="UnderLine">Youth <span>Workshops</span></h2>} content="We host weekly workshops that focus on a specific life skill deemed pertinent by the local community in the Needs Assessment. Workshop topics include: positive reinforcement techniques, use of body language, learning styles, engagement & communication techniques, active listening and learning, leadership, team-building, uses of social media, sleep needs, and more. We have a wide library of resources from years of community involvement, and the resource base continues to grow with each community we work within." image={data.YouthWorkshops} />
+        
+        <SliderTopContentBottomImage />
+
+        <ListContent />
+
+        <ImageBox />
+
+        <LeftAccordionRightImage accordionItem={accordionItem} title="Sport" image={data.AccordionImage} accordionWidth60={true} />
     </Layouts>
   )
 }

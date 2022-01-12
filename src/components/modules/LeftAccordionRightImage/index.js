@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { useEffect, useRef } from 'react';
 import * as styles from './LeftAccordionRightImage.module.scss';
 
-const LeftAccordionRightImage = ({accordionItem, title, image}) => {
+const LeftAccordionRightImage = ({accordionItem, title, image, accordionWidth60 = false}) => {
     const panelrefs = useRef([]);
     const btnrefs = useRef([]);
 
@@ -26,23 +26,21 @@ const LeftAccordionRightImage = ({accordionItem, title, image}) => {
                 <div className={styles.top}>
                     <h2>{title}</h2>
                 </div>
-                <div className={styles.left}>
+                <div className={`${styles.left} ${accordionWidth60 ? styles.width60 : ''}`}>
                     {
                         accordionItem.map((item, index) => {
                             return(
                                 <div key={index} className={styles.accordionItem}>
                                     <button onClick={() => handleToggle(index)} ref={ref => btnrefs.current.push(ref)}>{item.title} <FontAwesomeIcon icon={faArrowRight} /></button>
                                     <div className={styles.text} ref={ref => panelrefs.current.push(ref)}>
-                                        <div className={styles.content}>
-                                            {item.text}
-                                        </div>
+                                        <div className={styles.content} dangerouslySetInnerHTML={{__html: item.text}} />
                                     </div>
                                 </div>
                             )
                         })
                     }
                 </div>
-                <div className={styles.right}>
+                <div className={`${styles.right} ${accordionWidth60 ? styles.width40 : ''}`}>
                     <GatsbyImage className={styles.Image} image={getImage(image)} alt="" />
                 </div>
             </div>

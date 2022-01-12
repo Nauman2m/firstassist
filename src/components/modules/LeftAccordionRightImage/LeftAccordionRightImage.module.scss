@@ -16,6 +16,9 @@
     .left {
       width: 50%;
       padding-inline-end: 30px;
+      &.width60 {
+        width: 60%;
+      }
       .accordionItem {
         button {
           display: block;
@@ -56,8 +59,12 @@
     }
     .right {
       width: 50%;
+      &.width40 {
+        width: 40%;
+      }
       .Image {
         display: block;
+        width: 100%;
         border-radius: 20px;
       }
     }

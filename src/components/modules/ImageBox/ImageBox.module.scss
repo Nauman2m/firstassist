@@ -1,0 +1,44 @@
+.ImageBox {
+  margin-top: 80px;
+  position: relative;
+  &::before {
+    content: "Education";
+    top: -150px;
+    left: 9%;
+    font-size: 250px;
+    position: absolute;
+    color: #f7f7f7;
+    line-height: normal;
+    z-index: -1;
+  }
+  .wrap {
+    max-width: 1240px;
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .itemWrap {
+      width: 31.5%;
+      .img {
+        border-radius: 10px;
+        margin-bottom: 2em;
+      }
+      .title {
+        background: rgb(255, 234, 230);
+        padding: 8px 15px;
+        border-radius: 40px;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        h3 {
+          font-size: 16px;
+          margin: 0;
+        }
+        svg {
+          font-size: 25px;
+          color: #fc2d2d;
+        }
+      }
+    }
+  }
+}
