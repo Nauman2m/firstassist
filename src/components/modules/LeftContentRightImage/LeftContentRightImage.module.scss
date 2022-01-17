@@ -1,17 +1,30 @@
 @import "src/styles/bp";
 .LeftContentRightImage {
   padding-block: 0 100px;
+  @include sm {
+    padding-block: 50px;
+    * {
+      box-sizing: border-box;
+    }
+  }
   .wrap {
     max-width: 1240px;
     margin: 0 auto;
     display: flex;
+    @include sm {
+      flex-direction: column-reverse;
+    }
     .left {
       width: 50%;
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      box-sizing: content-box;
+      @include sm {
+        width: 100%;
+        padding-inline: 15px;
+        margin-top: 2em;
+      }
       h2 {
         margin-bottom: 0.65em;
       }
@@ -25,14 +38,29 @@
           margin-bottom: 2.5em;
         }
       }
+      a {
+        @include sm {
+          padding-inline: 40px;
+          text-align: center;
+          white-space: pre-wrap;
+        }
+      }
     }
     .right {
       width: 41%;
       margin-left: 9%;
+      @include sm {
+        width: 100%;
+        padding-inline: 15px;
+        margin-left: 0;
+      }
       .img {
         border-radius: 6px;
         animation: lqdFIFloatOne 1s ease infinite alternate;
         animation-delay: 0s;
+        @include sm {
+          animation: unset;
+        }
       }
     }
   }

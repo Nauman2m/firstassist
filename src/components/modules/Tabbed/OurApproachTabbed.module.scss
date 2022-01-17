@@ -1,9 +1,19 @@
 @import "src/styles/colors";
+@import "src/styles/bp";
 .OurApproachTabbed {
   margin-block: 80px;
+  * {
+    box-sizing: border-box;
+  }
+  @include sm {
+    margin-block: 0 40px;
+  }
   .wrap {
-    width: 1240px;
+    max-width: 1240px;
     margin-inline: auto;
+    @include sm {
+      padding-inline: 15px;
+    }
     h2 {
       text-align: center;
     }
@@ -11,9 +21,16 @@
       display: flex;
       flex-wrap: wrap;
       margin-block: 60px 40px;
+      @include sm {
+        margin-block: 20px 40px;
+      }
       .btnContainer {
         &:not(:last-of-type) {
           margin-inline-end: 15px;
+        }
+        @include sm {
+          width: 100%;
+          margin: 10px 0 0 !important;
         }
         button {
           background: #fff4f4;
@@ -24,6 +41,9 @@
           border-radius: 35px;
           border: none;
           cursor: pointer;
+          @include sm {
+            width: 100%;
+          }
         }
         &.active {
           button {
@@ -35,10 +55,15 @@
     }
     .content {
       display: flex;
+      flex-wrap: wrap;
       .imgContainer {
         width: 50%;
         padding-inline: 15px;
         box-sizing: border-box;
+        @include sm {
+          width: 100%;
+          padding-inline: 0;
+        }
         .img {
           border-radius: 20px;
         }
@@ -49,6 +74,10 @@
         align-items: stretch;
         padding: 130px 50px 70px 0;
         position: relative;
+        @include sm {
+          width: 100%;
+          padding: 40px 15px 70px 0;
+        }
         &::before {
           content: "";
           background: #fff4f4;
@@ -59,6 +88,10 @@
           right: 15px;
           z-index: 0;
           border-radius: 20px;
+          @include sm {
+            top: 20px;
+            right: 0;
+          }
         }
         .box {
           position: relative;
@@ -67,6 +100,10 @@
             font-size: 38px;
             line-height: 1.5;
             margin-block: 0 30px;
+            @include sm {
+              font-size: 28px;
+              margin-block: 0 20px;
+            }
           }
           p {
             margin-bottom: 30px;

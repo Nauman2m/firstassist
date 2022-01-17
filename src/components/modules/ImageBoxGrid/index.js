@@ -33,7 +33,7 @@ const ImageBoxGrid = ({Items, grid3 = false, title, beforeTitle}) => {
         <div ref={wrap} className={styles.ImageBoxGrid}>
             <div className={styles.wrapper}>
                 <div className={styles.topContent}>
-                    <BeforeHeadingText text={beforeTitle} />
+                    {beforeTitle && <BeforeHeadingText text={beforeTitle} />}
                     <h2>{title}</h2>
                 </div>
                 <div className={`${styles.gridWrap} ${grid3 ? styles.grid3 : ''}`}>

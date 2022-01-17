@@ -1,14 +1,24 @@
+@import "src/styles/bp";
 .OurImpact {
   padding-block: 80px;
   background-position: top !important;
+  @include sm {
+    padding-block: 60px;
+  }
   .content {
     width: 55%;
     margin-inline: auto;
     text-align: center;
     color: #fff;
+    @include sm {
+      width: calc(100% - 30px);
+    }
     h2 {
       color: #fff;
       margin-bottom: 40px;
+      @include sm {
+        margin-bottom: 20px;
+      }
     }
     p {
       font-size: 18px;

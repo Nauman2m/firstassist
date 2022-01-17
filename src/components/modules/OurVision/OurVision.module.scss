@@ -1,10 +1,23 @@
+@import "src/styles/bp";
 .OurVision {
   margin-block: 80px;
+  @include sm {
+    margin-block: 60px;
+    * {
+      box-sizing: border-box;
+    }
+  }
   .wrap {
-    width: 1240px;
+    max-width: 1240px;
     margin-inline: auto;
+    @include sm {
+      padding-inline: 15px;
+    }
     .content {
       width: 80%;
+      @include sm {
+        width: 100%;
+      }
     }
   }
 }

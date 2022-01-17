@@ -1,9 +1,20 @@
+@import "src/styles/bp";
 .OurMission {
   display: flex;
   background-color: #eaeaea;
   padding-bottom: 8px;
+  @include sm {
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+    * {
+      box-sizing: border-box;
+    }
+  }
   .left {
     width: 66%;
+    @include sm {
+      width: 100%;
+    }
     .img {
       width: 100%;
       height: auto;
@@ -13,14 +24,25 @@
     width: 33%;
     display: flex;
     align-items: center;
+    @include sm {
+      width: 100%;
+    }
     .contentWrap {
       position: relative;
+      @include sm {
+        z-index: 2;
+        margin-top: -25px;
+      }
       .content {
         background: #fff;
         padding: 30px;
         margin-right: 100px;
         margin-left: -200px;
         border-radius: 6px;
+        @include sm {
+          margin-right: 15px;
+          margin-left: 15px;
+        }
       }
     }
   }

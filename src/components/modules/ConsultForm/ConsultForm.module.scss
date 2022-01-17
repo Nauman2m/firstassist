@@ -1,17 +1,29 @@
+@import "src/styles/bp";
 .ConsultForm {
   & * {
     box-sizing: border-box;
   }
   margin-bottom: 80px;
+  @include sm {
+    margin-bottom: 40px;
+  }
   .wrap {
     max-width: 1240px;
     margin-inline: auto;
+    @include sm {
+      padding-inline: 15px;
+    }
     .formContainer {
       max-width: 75%;
       margin-inline: auto;
       padding: 60px;
       background: #fff4f4;
       border-radius: 20px;
+      @include sm {
+        max-width: 100%;
+        padding-inline: 20px;
+        padding-block: 30px;
+      }
       .top {
         text-align: center;
         h2 {
@@ -34,6 +46,9 @@
             font-size: 15px;
             background: #fff;
             border-radius: 30px;
+            @include sm {
+              margin-bottom: 15px;
+            }
           }
           input[type="button"],
           input[type="submit"] {
@@ -46,6 +61,9 @@
           }
           .inputWrap {
             width: 32%;
+            @include sm {
+              width: 100%;
+            }
             &.inputWrapFull {
               width: 100%;
             }

@@ -1,18 +1,35 @@
+@import "src/styles/bp";
 .ListContent {
   margin-top: 80px;
+  @include sm {
+    margin-top: 40px;
+  }
   .wrap {
     max-width: 1240px;
     margin-inline: auto;
+    @include sm {
+      padding-inline: 15px;
+    }
     p {
       width: 70%;
+      @include sm {
+        width: 100%;
+      }
     }
     ul {
       list-style: none;
       padding: 0;
       li {
+        @include sm {
+          display: flex;
+          margin-bottom: 10px;
+        }
         svg {
           color: #fc2d2d;
           margin-right: 5px;
+          @include sm {
+            margin-top: 5px;
+          }
         }
       }
     }

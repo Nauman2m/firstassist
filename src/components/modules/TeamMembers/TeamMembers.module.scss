@@ -1,16 +1,30 @@
+@import "src/styles/bp";
 .TeamMembers {
   margin-block: 80px;
+  @include sm {
+    margin-block: 20px 50px;
+  }
   .wrap {
     max-width: 1240px;
     margin-inline: auto;
+    @include sm {
+      padding-inline: 15px;
+    }
     .top {
       margin-bottom: 60px;
+      @include sm {
+        margin-bottom: 30px;
+      }
     }
     .members {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       .member {
         width: 48%;
+        @include sm {
+          width: 100%;
+        }
         .img {
           width: 100%;
           border-top-left-radius: 6px;
@@ -40,6 +54,9 @@
           padding: 35px 20px 20px;
           height: 385px;
           border-radius: 6px;
+          @include sm {
+            height: auto;
+          }
         }
       }
     }

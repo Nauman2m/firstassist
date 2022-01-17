@@ -1,5 +1,7 @@
 import { Link } from 'gatsby';
-import React, { useState } from 'react';
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import React, { useEffect, useRef, useState } from 'react';
 import Button from '../../common/button';
 import * as styles from './header.module.scss';
 import NavList from './NavList';
@@ -56,8 +58,8 @@ let Menu = [
     },
     {
         "id": "cG9zdDozODg=",
-        "label": "Programs",
-        "url": "https://firstassist.ca/programs/",
+        "label": "Sport",
+        "url": "https://firstassist.ca/sport/",
         "parentId": null,
         "__typename": "MenuItem",
         "children": []
@@ -74,13 +76,34 @@ let Menu = [
 
 const Header = ({path}) => {
     const [MobNavBtn, setMobNavBtn] = useState(false);
+    const [isSticky, setIsSticky] = useState(false);
+    const headerRef = useRef(null);
 
     const toggleMobBtn = () => {
         setMobNavBtn(state => !state);
     }
 
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to(headerRef.current, 
+            {
+                duration: 4,
+                ease: "power1.in",
+                yoyo: true,
+                scrollTrigger: {
+                  trigger: headerRef.current,
+                  start: '500px top',
+                  onEnter: () => setIsSticky(true),
+                  onLeaveBack: () => setIsSticky(false),
+                  toggleActions: 'play none none reverse',
+                  markers: false
+                }
+            }
+        );
+    }, []);
+
     return (
-        <header className={styles.headerContainer}>
+        <header ref={headerRef} className={`${styles.headerContainer} ${isSticky ? styles.isSticky : ''}`}>
             <div className={styles.header}>
                 <div className={styles.logoContainer}>
                     <Link aria-label="logo" to="/">

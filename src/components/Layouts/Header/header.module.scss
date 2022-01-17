@@ -8,6 +8,12 @@
   right: 0;
   z-index: 99;
   transition: background-color 0.3s;
+  &.isSticky {
+    position: fixed;
+    background-color: #f6f6f6;
+    animation-name: sticky;
+    animation-duration: 0.5s;
+  }
   @include sm {
     background-color: #f6f6f6;
   }
@@ -187,5 +193,13 @@
         }
       }
     }
+  }
+}
+@keyframes sticky {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
   }
 }

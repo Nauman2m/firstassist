@@ -1,6 +1,10 @@
 @import "src/styles/colors";
+@import "src/styles/bp";
 .LeftAccordionRightImage {
   margin-block: 60px 80px;
+  @include sm {
+    margin-block: 20px 60px;
+  }
   .wrap {
     & * {
       box-sizing: border-box;
@@ -9,15 +13,25 @@
     margin-inline: auto;
     display: flex;
     flex-wrap: wrap;
+    @include sm {
+      padding-inline: 15px;
+    }
     .top {
       width: 100%;
       padding-bottom: 30px;
+      @include sm {
+        padding-bottom: 0px;
+      }
     }
     .left {
       width: 50%;
       padding-inline-end: 30px;
       &.width60 {
         width: 60%;
+      }
+      @include sm {
+        width: 100% !important;
+        padding-inline-end: 0px !important;
       }
       .accordionItem {
         button {
@@ -61,6 +75,10 @@
       width: 50%;
       &.width40 {
         width: 40%;
+      }
+      @include sm {
+        width: 100% !important;
+        margin-top: 30px;
       }
       .Image {
         display: block;
