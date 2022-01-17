@@ -18,7 +18,7 @@ const CharitableOrganization = () => {
                 </div>
                 <div className={styles.wrap}>
                     <div className={styles.left}>
-                        <StaticImage className={styles.image} src="../../../images/how-we-work.png" alt="how-we-work" />
+                        <StaticImage className={styles.image} src="../../../images/how-we-work.png" alt="how-we-work" quality={100} />
                     </div>
                     <div className={styles.right}>
                         <img className={styles.overlayImg} src="/images/canadian-map.png" alt="" />
