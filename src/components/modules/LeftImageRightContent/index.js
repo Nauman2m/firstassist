@@ -10,7 +10,7 @@ const LeftImageRightContent = () => {
         <div className={`${styles.LeftThreeParallaxImageRightContent} wrapEl`}>
             <div className={styles.wrap}>
                 <div className={`${styles.left} leftEl`}>
-                    <StaticImage src="../../../images/who-we-are.png" alt="who we are" />
+                    <StaticImage src="../../../images/who-we-are.jpg" alt="who we are" />
                 </div>
                 <div className={styles.right}>
                     <div>
