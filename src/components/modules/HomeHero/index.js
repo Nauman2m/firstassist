@@ -1,13 +1,39 @@
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { StaticImage } from "gatsby-plugin-image";
+import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from 'react';
 import Particles from "react-tsparticles";
 import BeforeHeadingText from '../../common/BeforeHeadingText';
 import Button from '../../common/button';
 import * as styles from './HomeHero.module.scss';
 
-const HomeHero = () => {
+export const fragment = graphql`
+  fragment HomeHero on WpPage_Pagesections_Sections_HomeHero {
+    fieldGroupName
+    buttonText
+    buttonUrl
+    hotelineText
+    hotelineNumber
+    title
+    text
+    playButtonUrl
+    roundedBgText {
+        text
+        tagName
+    }
+    image {
+        altText
+        localFile {
+            childImageSharp {
+                gatsbyImageData
+            }
+        }
+    }
+  }
+`;
+
+const HomeHero = (props) => {
 
     let Params = {
         "particles": {
@@ -73,45 +99,51 @@ const HomeHero = () => {
         "retina_detect": true,
         "asBG": true
     }
-
+    const {
+        title,
+        roundedBgText,
+        text,
+        buttonText,
+        buttonUrl,
+        hotelineText,
+        hotelineNumber,
+        image,
+        playButtonUrl
+    } = props
     return (
         <div className={styles.HomeHero}>
             <Particles params={Params} className={styles.particles} canvasClassName={styles.particlesCanvas} />
             <div className={styles.HeroContent}>
                 <div className={styles.Left}>
-                    <div>
-                        <BeforeHeadingText text="First Assist Charity" tagname="h1" />
-                    </div>
-                    <h2 className="UnderLine">
-                        Prioritizing the Success of Every <span>Indigenous Child</span> and Teen Through Sport
-                    </h2>
-                    <div className={styles.Content}>
-                        <p>For decades, indigenous communities have lived with certain disadvantages and through unimaginable circumstances, creating disparities in health, education, and opportunities. First Assist indigenous programs help change the statistics while emphasizing cultural preservation.</p>
-                    </div>
+                    {roundedBgText && <div>
+                        <BeforeHeadingText text={roundedBgText?.text} tagname={roundedBgText?.tagName ?? 'h6'} />
+                    </div>}
+                    {title && <div dangerouslySetInnerHTML={{__html: title}} />}
+                    <div className={styles.Content} dangerouslySetInnerHTML={{__html: text}} />
                     <div className={styles.Cta}>
                         <div className={styles.btnContainer}>
-                            <Button type="link" internal={true} href="/join-us/" text="Join Us Today" />
+                            <Button type="link" internal={true} href={buttonUrl} text={buttonText} />
                         </div>
                         <div className={styles.CnContainer}>
                             <p>
                                 <span>
-                                    Hotline: <a href="tel:+16138692461">1-613-869-2461</a>
+                                    Hotline: <a href={hotelineNumber}>{hotelineText}</a>
                                 </span>
                             </p>
                         </div>
                     </div>
                 </div>
                 <div className={styles.Right}>
-                    <StaticImage className={styles.Image} src="../../../images/first-assist-charity-Ottawa.jpeg" alt="first assist charity Ottawa" />
-                    <div className={styles.playBtn}>
-                        <a href="https://ottawa.ctvnews.ca/video?clipId=2158146" target="_blank">
+                    <GatsbyImage className={styles.Image} image={getImage(image.localFile)} alt={image?.altText} />
+                    {playButtonUrl && <div className={styles.playBtn}>
+                        <a href={playButtonUrl ?? '#'} target="_blank">
                             <span>
                                 <span>
                                     <FontAwesomeIcon icon={faPlay} />
                                 </span>
                             </span>
                         </a>
-                    </div>
+                    </div>}
                 </div>
             </div>
         </div>

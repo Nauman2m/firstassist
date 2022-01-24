@@ -1,15 +1,20 @@
-import React from 'react'
-import * as styles from './ConsultForm.module.scss'
+import { graphql } from 'gatsby';
+import React from 'react';
+import * as styles from './ConsultForm.module.scss';
 
-const ConsultForm = () => {
+export const fragment = graphql`
+  fragment ConsultForm on WpPage_Pagesections_Sections_ConsultForm {
+    content
+    fieldGroupName
+  }
+`;
+
+const ConsultForm = ({content}) => {
     return (
         <div className={styles.ConsultForm}>
             <div className={styles.wrap}>
                 <div className={styles.formContainer}>
-                    <div className={styles.top}>
-                        <h2>Consult</h2>
-                        <p>Thank you for inquiring about our programs for your community, we hope we can help your youth become the leaders of tomorrow.</p>
-                    </div>
+                    <div className={styles.top} dangerouslySetInnerHTML={{__html: content}} />
                     <div className={styles.bottom}>
                         <form>
                             <div className={styles.inputWrap}>

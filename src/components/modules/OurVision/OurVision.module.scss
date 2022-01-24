@@ -1,8 +1,6 @@
 @import "src/styles/bp";
 .OurVision {
-  margin-block: 80px;
   @include sm {
-    margin-block: 60px;
     * {
       box-sizing: border-box;
     }
@@ -15,6 +13,9 @@
     }
     .content {
       width: 80%;
+      h2 {
+        margin-top: 0;
+      }
       @include sm {
         width: 100%;
       }

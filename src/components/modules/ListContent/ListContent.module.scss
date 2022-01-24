@@ -1,9 +1,5 @@
 @import "src/styles/bp";
 .ListContent {
-  margin-top: 80px;
-  @include sm {
-    margin-top: 40px;
-  }
   .wrap {
     max-width: 1240px;
     margin-inline: auto;

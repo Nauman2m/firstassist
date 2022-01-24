@@ -1,11 +1,7 @@
 @import "src/styles/bp";
 .ImageContentFlex {
-  margin-top: 80px;
   * {
     box-sizing: border-box;
-  }
-  @include sm {
-    margin-top: 40px;
   }
   .wrap {
     max-width: 1240px;

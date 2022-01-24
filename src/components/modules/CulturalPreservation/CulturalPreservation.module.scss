@@ -2,10 +2,6 @@
 .CulturalPreservation {
   display: flex;
   flex-wrap: wrap;
-  margin-block: 100px 0;
-  @include sm {
-    margin-block: 50px 0;
-  }
   .left {
     width: 50%;
     position: relative;

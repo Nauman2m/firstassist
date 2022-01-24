@@ -1,5 +1,13 @@
-import React from 'react'
-import * as styles from './OurVision.module.scss'
+import { graphql } from 'gatsby';
+import React from 'react';
+import * as styles from './OurVision.module.scss';
+
+export const fragment = graphql`
+  fragment OurVision on WpPage_Pagesections_Sections_OurVision {
+    content
+    fieldGroupName
+  }
+`;
 
 const OurVision = () => {
     return (

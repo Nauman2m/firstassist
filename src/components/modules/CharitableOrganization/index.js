@@ -1,15 +1,39 @@
-import { StaticImage } from "gatsby-plugin-image";
+import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from 'react';
 import Button from '../../common/button';
 import * as styles from './CharitableOrganization.module.scss';
 
-const CharitableOrganization = () => {
+export const fragment = graphql`
+  fragment CharitableOrganization on WpPage_Pagesections_Sections_CharitableOrganization {
+    buttonText
+    buttonUrl
+    content
+    fieldGroupName
+    sectionContent
+    image {
+      altText
+      localFile {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+    }
+  }
+`;
+
+const CharitableOrganization = (props) => {
+    const {
+        buttonText,
+        buttonUrl,
+        content,
+        sectionContent,
+        image
+    } = props
+    
     return (
         <div className={styles.CharitableOrganization}>
-            <div className={styles.top}>
-                <h2>How Does First Assist Charitable Organization Create Positive Change?</h2>
-                <p>When kids participate in sports, amazing things happen!</p>
-            </div>
+            <div className={styles.top} dangerouslySetInnerHTML={{__html: sectionContent}} />
             <div className={styles.bottom}>
                 <div className={styles.CurveTop}>
                     <svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" width="1943" height="98.812" viewBox="0 0 1943 98.812" preserveAspectRatio="none">
@@ -18,25 +42,12 @@ const CharitableOrganization = () => {
                 </div>
                 <div className={styles.wrap}>
                     <div className={styles.left}>
-                        <StaticImage className={styles.image} src="../../../images/how-we-work.png" alt="how-we-work" quality={100} />
+                        <GatsbyImage className={styles.image} image={getImage(image?.localFile)} alt={image?.altText} />
                     </div>
                     <div className={styles.right}>
                         <img className={styles.overlayImg} src="/images/canadian-map.png" alt="" />
-                        <h3>Active Childhoods Lead To:</h3>
-                        <ul>
-                            <li>Less childhood and adult obesity</li>
-                            <li>Up to 40% higher test scores in school</li>
-                            <li>Less smoking and drug use</li>
-                            <li>Fewer teen pregnancies</li>
-                            <li>A marked increase in high school graduation rates</li>
-                            <li>A marked increase in the likelihood of college attendance</li>
-                            <li>Lower levels of depression and mental illness</li>
-                            <li>Better self-esteem in young adulthood</li>
-                            <li>Higher salaries</li>
-                            <li>Fewer health issues and lower health-related costs</li>
-                            <li>More opportunities for workplace advancement</li>
-                        </ul>
-                        <Button type="link" internal={true} href="/join-us/" text="Join With Us" />
+                        <div dangerouslySetInnerHTML={{__html: content}} />
+                        <Button type="link" internal={true} href={buttonUrl} text={buttonText} />
                     </div>
                 </div>
                 <div className={styles.CurveBottom}>

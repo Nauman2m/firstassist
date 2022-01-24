@@ -1,9 +1,7 @@
 @import "src/styles/bp";
 .ImageBox {
-  margin-top: 80px;
   position: relative;
-  &::before {
-    content: "Education";
+  .sectionText {
     top: -150px;
     left: 9%;
     font-size: 250px;

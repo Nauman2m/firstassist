@@ -1,4 +1,5 @@
 import useWindowSize from '@charlietango/use-window-size';
+import { graphql } from 'gatsby';
 import React, { useCallback, useState } from 'react';
 import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css';
@@ -7,7 +8,14 @@ import Locations from './Locations';
 import * as styles from './MapSection.module.scss';
 import MapSvg from './MapSvg';
 
-const MapSection = () => {
+export const fragment = graphql`
+  fragment MapSection on WpPage_Pagesections_Sections_MapSection {
+    fieldGroupName
+    title
+  }
+`;
+
+const MapSection = ({title}) => {
     const {width} = useWindowSize();
     let mobileScreen = width < 768;
     const [pin, setPin] = useState(null);
@@ -29,7 +37,7 @@ const MapSection = () => {
     return (
         <div className={styles.MapSection}>
             <div className={styles.sectionWrap}>
-                <h2>Community Partners</h2>
+                <div dangerouslySetInnerHTML={{__html: title}} />
                 <div className={styles.mapWrap}>
                     <div className={styles.mapLocWrap}>
                         <div className={styles.mapLocs}>
@@ -62,7 +70,7 @@ const MapSection = () => {
                                 Locations.map((item, index) => {
                                     return (
                                         <>
-                                            <div className={`${styles.info2} ${pin === item.id ? styles.active : ''}`}  style={{transform: `translate(calc(${item.x} - 45%), calc(${item.y} - 108%))`}}>
+                                            <div key={index} className={`${styles.info2} ${pin === item.id ? styles.active : ''}`}  style={{transform: `translate(calc(${item.x} - 45%), calc(${item.y} - 108%))`}}>
                                                 <div className={styles.head}>
                                                     <button onClick={() => setPin(null)}></button>
                                                 </div>
@@ -74,8 +82,7 @@ const MapSection = () => {
                                                     </p>
                                                 </div>
                                             </div>
-                                            <button 
-                                                key={index} 
+                                            <button
                                                 onClick={() => TriggerPin(item.id)}
                                                 onMouseEnter={!mobileScreen ? TriggerHovered : () => false}
                                                 onMouseLeave={!mobileScreen ? TriggerHovered : () => false}

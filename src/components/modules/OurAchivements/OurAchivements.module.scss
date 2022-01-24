@@ -2,11 +2,9 @@
 .OurAchivements {
   background: #000;
   padding: 120px 0;
-  margin-bottom: 100px;
   position: relative;
   @include sm {
     padding: 60px 0;
-    margin-bottom: 60px;
   }
   .CurveTop {
     width: 100%;

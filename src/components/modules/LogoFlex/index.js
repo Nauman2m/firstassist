@@ -1,26 +1,41 @@
-import { Link } from 'gatsby';
-import { StaticImage } from "gatsby-plugin-image";
+import { graphql, Link } from 'gatsby';
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from 'react';
 import * as styles from './LogoFlex.module.scss';
 
-const LogoFlex = () => {
+export const fragment = graphql`
+  fragment LogoFlex on WpPage_Pagesections_Sections_LogoFlex {
+    buttonText
+    buttonUrl
+    content
+    fieldGroupName
+    logos {
+      logo {
+        altText
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+  }
+`;
+
+const LogoFlex = ({buttonText, buttonUrl, content, logos}) => {
     return (
         <div className={styles.LogoFlex}>
             <div className={styles.wrap}>
-                <div className={styles.SectionText}>
-                    <h2>Your Donation Matters</h2>
-                    <p>Partner with Canada’s premiere sports-centred indigenous charitable organization and be part of the solution.</p>
-                </div>
+                <div className={styles.SectionText} dangerouslySetInnerHTML={{__html: content}} /> 
                 <div className={styles.logoContainer}>
-                    <StaticImage className={styles.logo} src="../../../images/birks.png" alt="Logo Flex" />
-                    <StaticImage className={styles.logo} src="../../../images/scotiabank.png" alt="Logo Flex" />
-                    <StaticImage className={styles.logo} src="../../../images/anish-branding.png" alt="Logo Flex" />
-                    <StaticImage className={styles.logo} src="../../../images/active-nation.png" alt="Logo Flex" />
-                    <StaticImage className={styles.logo} src="../../../images/senatros-community-foundation.png" alt="Logo Flex" />
-                    <StaticImage className={styles.logo} src="../../../images/scotiabank.png" alt="Logo Flex" />
+                    {
+                        logos?.map((item, index) => {
+                            return <GatsbyImage key={index} className={styles.logo} image={getImage(item.logo.localFile)} alt={item.logo?.altText} />
+                        })
+                    }
                 </div>
                 <div className={styles.bottom}>
-                    <Link to="/join-us/">Partner With Us</Link>
+                    <Link to={buttonUrl}>{buttonText}</Link>
                 </div>
             </div>
         </div>

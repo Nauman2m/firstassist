@@ -1,11 +1,26 @@
 import useWindowSize from '@charlietango/use-window-size';
-import { StaticImage } from "gatsby-plugin-image";
+import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import React, { useEffect, useRef } from 'react';
 import * as styles from './OurMission.module.scss';
+export const fragment = graphql`
+  fragment OurMission on WpPage_Pagesections_Sections_OurMission {
+    content
+    fieldGroupName
+    image {
+      altText
+      localFile {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+    }
+  }
+`;
 
-const OurMission = () => {
+const OurMission = (props) => {
     const OurMissionWrap = useRef(null);
     const OurMissionImg = useRef(null);
     const { width } = useWindowSize();
@@ -27,19 +42,21 @@ const OurMission = () => {
         }
     }, [mobileScreen])
 
+    const {
+        content,
+        image
+    } = props
+
     return (
         <div ref={OurMissionWrap} className={styles.OurMission}>
             <div className={styles.left}>
                 <div ref={OurMissionImg}>
-                    <StaticImage className={styles.img} src="../../../images/first-assist-mission.jpg" alt="first-assist-mission" />
+                    <GatsbyImage className={styles.img} image={getImage(image?.localFile)} alt={image?.altText} />
                 </div>
             </div>
             <div className={styles.right}>
                 <div className={styles.contentWrap}>
-                    <div className={styles.content}>
-                        <h2 className="UnderLine">Our <span>Mission</span></h2>
-                        <p>Our primary goal is to help all students in indigenous communities obtain their high school diploma by using sport as a motivational tool to promote school attendance and increase classroom engagement while learning how to be healthy and active for life.</p>
-                    </div>
+                    <div className={styles.content} dangerouslySetInnerHTML={{__html: content}} />
                 </div>
             </div>
         </div>

@@ -1,10 +1,6 @@
 @import "src/styles/fonts";
 @import "src/styles/bp";
 .LogoFlex {
-  margin-block: 80px 100px;
-  @include sm {
-    margin-block: 50px;
-  }
   .wrap {
     max-width: 1240px;
     margin: 0 auto;

@@ -1,114 +1,98 @@
-import { graphql, useStaticQuery } from 'gatsby'
-import React from 'react'
-import { Helmet } from 'react-helmet'
+import React from 'react';
+import Helmet from 'react-helmet';
+
+function decodeHTML(html) {
+    if (!html) return null;
+    html = html.replace('amp;', '');
+    return html.replace(/&#(\d+);/g, (match, dec) => String.fromCharCode(dec));
+}
  
- function Seo({ description, lang, meta, title }) {
-   const { site } = useStaticQuery(
-     graphql`
-       query {
-         site {
-           siteMetadata {
-             siteName
-             title
-             description
-             author
-             gSiteVerification
-           }
-         }
-       }
-     `
-   )
- 
-   const metaDescription = description || ''
-   //const defaultTitle = site.siteMetadata?.title;
-   const siteName = site.siteMetadata.siteName
-   return (
-     <Helmet
-       htmlAttributes={{
-         lang,
-       }}
-       title={title || site.siteMetadata?.title}
-       // title="Green Light Immigration Canada"
-       //titleTemplate={defaultTitle ? `%s` : null}
-       meta={[
-         {
-           name: "referrer",
-           content: "no-referrer-when-downgrade",
-         },
-         {
-           name: `description`,
-           content: metaDescription,
-         },
-         {
-           property: `og:title`,
-           content: title,
-         },
-         {
-           property: `og:description`,
-           content: metaDescription,
-         },
-         {
-           property: `og:type`,
-           content: `website`,
-         },
-         {
-           property: `og:site_name`,
-           content: `${siteName}`,
-         },
-         {
-           name: `twitter:card`,
-           content: `summary`,
-         },
-         {
-           name: `twitter:creator`,
-           content: site.siteMetadata?.author || ``,
-         },
-         {
-           name: `twitter:title`,
-           content: title,
-         },
-         {
-           name: `twitter:description`,
-           content: metaDescription,
-         },
-         {
-           name: `HandheldFriendly`,
-           content: `True`,
-         },
-         {
-           name: `MobileOptimized`,
-           content: `320`,
-         },
-         {
-           name: `viewport`,
-           content: `width=device-width, initial-scale=1`,
-         },
-         {
-           name: `robots`,
-           content: `index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1`,
-         },
-         {
-           name: `twitter:card`,
-           content: `summary_large_image`,
-         },
-         {
-           name: `twitter:label1`,
-           content: `Written by`,
-         },
-         {
-           name: `twitter:data1`,
-           content: `Danny`,
-         }
-       ].concat(meta)}
-     />
-   )
- }
- 
- Seo.defaultProps = {
-   lang: `en`,
-   meta: [],
-   description: ``,
- }
- 
- export default Seo
- 
+const Seo = ({ slug = "", isBlog = false, metaDesc = "", opengraphImage = null, opengraphTitle = "", title = "", twitterDescription = "", twitterImage = null, twitterTitle = "" }) => {
+
+    const postURL = `/`;
+
+    const schemaOrgJSONLD = [
+        {
+            '@context': 'http://schema.org',
+            '@type': 'WebSite',
+            url: process.env.GATSBY_SITE_URL,
+            name: opengraphTitle ? decodeHTML(opengraphTitle) : decodeHTML(title),
+            alternateName: '@firstassist',
+        },
+        {
+            '@context': 'http://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+                {
+                    '@type': 'ListItem',
+                    position: 1,
+                    item: {
+                        '@id': postURL,
+                        name: opengraphTitle ? decodeHTML(opengraphTitle) : decodeHTML(title),
+                        image: opengraphImage ? opengraphImage.sourceUrl : null,
+                    },
+                },
+            ],
+        },
+        {
+            '@context': 'http://schema.org',
+            '@type': 'BlogPosting',
+            url: process.env.GATSBY_SITE_URL,
+            name: opengraphTitle ? decodeHTML(opengraphTitle) : decodeHTML(title),
+            alternateName: '@firstassist',
+            headline: opengraphTitle ? decodeHTML(opengraphTitle) : decodeHTML(title),
+            image: {
+                '@type': 'ImageObject',
+                url: opengraphImage ? opengraphImage.sourceUrl : null,
+            },
+            description: metaDesc,
+        },
+    ];
+
+    return (
+        <Helmet   htmlAttributes={{ lang: 'en', }}>
+            {/* General tags */}
+            <title>{opengraphTitle ? decodeHTML(opengraphTitle) : decodeHTML(title)}</title>
+            <meta name="description" content={metaDesc} />
+            <meta name="image" content={opengraphImage ? opengraphImage.sourceUrl : null} />
+
+            {/* Schema.org tags */}
+            <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
+
+            {/* OpenGraph tags */}
+            <meta property="og:url" content={`${process.env.GATSBY_SITE_URL}/${slug}`} />
+            {isBlog ? <meta property="og:type" content="article" /> : null}
+            <meta
+                property="og:title"
+                content={opengraphTitle ? decodeHTML(opengraphTitle) : decodeHTML(title)}
+            />
+            <meta property="og:description" content={metaDesc || ''} />
+            <meta property="og:image" content={opengraphImage ? opengraphImage.sourceUrl : null} />
+
+            {/* Twitter Card tags */}
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta property="twitter:url" content={`${process.env.GATSBY_SITE_URL}/${slug}`} />
+            <meta name="twitter:creator" content="whatjackhasmade" />
+            <meta
+                name="twitter:title"
+                content={
+                    twitterTitle ||
+                    (opengraphTitle ? decodeHTML(opengraphTitle) : decodeHTML(title))
+                }
+            />
+            <meta name="twitter:description" content={twitterDescription || metaDesc || ''} />
+            <meta
+                name="twitter:image"
+                content={
+                    twitterImage
+                        ? twitterImage.sourceUrl
+                        : opengraphImage
+                        ? opengraphImage.sourceUrl
+                        : null
+                }
+            />
+        </Helmet>
+    );
+};
+
+export default Seo;

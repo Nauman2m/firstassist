@@ -1,23 +1,45 @@
-import { StaticImage } from "gatsby-plugin-image";
+import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from 'react';
 import Button from '../../common/button';
 import * as styles from './LeftContentRightImage.module.scss';
 
-const LeftContentRightImage = () => {
+export const fragment = graphql`
+  fragment LeftContentRightImage on WpPage_Pagesections_Sections_LeftContentRightImage {
+    buttonText
+    buttonUrl
+    content
+    fieldGroupName
+    image {
+      altText
+      localFile {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+    }
+  }
+`;
+
+const LeftContentRightImage = (props) => {
+    const {
+        buttonText,
+        buttonUrl,
+        content,
+        image
+    } = props
+    
     return (
         <div className={styles.LeftContentRightImage}>
             <div className={styles.wrap}>
                 <div className={styles.left}>
-                    <h2 className="UnderLine">What <span>We</span> Do</h2>
-                    <div className={styles.Content}>
-                        <p>First Assist, a registered Canadian charity, partners directly with indigenous communities to develop education programs that teach transferable life skills proven to improve school attendance and graduation rates. Indigenous communities, including children, have unfair and unnecessary disparities in health, education, and opportunities. First Assist indigenous programs help change the statistics while emphasizing cultural preservation.</p>
-                    </div>
+                    <div className={styles.content} dangerouslySetInnerHTML={{__html: content}} />
                     <div>
-                        <Button type="link" internal={true} href="/join-us/" text="Get Your Community or Child Involved" />
+                        <Button type="link" internal={true} href={buttonUrl} text={buttonText} />
                     </div>
                 </div>
                 <div className={styles.right}>
-                    <StaticImage className={styles.img} src="../../../images/what-we-do-firstassist.jpg" alt="who we are" />
+                    <GatsbyImage className={styles.img} image={getImage(image?.localFile)} alt={image?.altText} />
                 </div>
             </div>
         </div>

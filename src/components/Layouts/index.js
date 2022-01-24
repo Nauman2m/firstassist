@@ -1,3 +1,4 @@
+import { graphql } from "gatsby"
 import { gsap, TweenLite } from "gsap"
 import CSSRulePlugin from "gsap/CSSRulePlugin"
 import React, { useEffect } from 'react'
@@ -6,7 +7,7 @@ import Footer from './Footer'
 import Header from './Header'
 import Seo from './Seo'
 
-const Layouts = ({path, children, title, description}) => {
+const Layouts = ({children, seo}) => {
     
     useEffect(() => {
         gsap.registerPlugin(CSSRulePlugin);
@@ -15,9 +16,9 @@ const Layouts = ({path, children, title, description}) => {
 
     return (
         <>
-            <Seo title={title} description={description} />
+            <Seo {...seo} />
             <main>
-            <Header path={path} />
+            <Header />
                 {children}
             <Footer />
             </main>
@@ -26,3 +27,35 @@ const Layouts = ({path, children, title, description}) => {
 }
 
 export default Layouts
+
+export const query = graphql`
+    fragment SeoFragment on WpPostTypeSEO {
+        breadcrumbs {
+        text
+        url
+        }
+        title
+        metaDesc
+        metaRobotsNoindex
+        metaRobotsNofollow
+        opengraphAuthor
+        opengraphDescription
+        opengraphTitle
+        schema {
+        articleType
+        pageType
+        raw
+        }
+        opengraphImage {
+        sourceUrl
+        }
+        opengraphSiteName
+        opengraphPublishedTime
+        opengraphModifiedTime
+        twitterTitle
+        twitterDescription
+        twitterImage {
+        sourceUrl
+        }
+    }
+`

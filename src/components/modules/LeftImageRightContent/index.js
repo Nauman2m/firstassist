@@ -1,10 +1,40 @@
+import { graphql } from 'gatsby';
 import { StaticImage } from "gatsby-plugin-image";
 import React from 'react';
 import BeforeHeadingText from '../../common/BeforeHeadingText';
 import Button from '../../common/button';
 import * as styles from './LeftImageRightContent.module.scss';
 
-const LeftImageRightContent = () => {
+export const fragment = graphql`
+  fragment LeftImageRightContent on WpPage_Pagesections_Sections_LeftImageRightContent {
+    beforeHeadingText
+    buttonText
+    buttonUrl
+    content
+    fieldGroupName
+    textHighlight
+    title
+    image {
+      altText
+      localFile {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+    }
+  }
+`;
+
+const LeftImageRightContent = (props) => {
+    const {
+        beforeHeadingText,
+        buttonText,
+        buttonUrl,
+        content,
+        textHighlight,
+        title,
+        image
+    } = props
 
     return (
         <div className={`${styles.LeftThreeParallaxImageRightContent} wrapEl`}>
@@ -14,17 +44,13 @@ const LeftImageRightContent = () => {
                 </div>
                 <div className={styles.right}>
                     <div>
-                        <BeforeHeadingText text="About Us" />
+                        <BeforeHeadingText text={beforeHeadingText} />
                     </div>
-                    <h2 className="UnderLine">Who <span>We</span> Are</h2>
-                    <div className={styles.TextHighLight}>
-                        <p>First Assist is a registered Canadian charity</p>
-                    </div>
-                    <div className={styles.Content}>
-                        <p>that focuses on the implementation of indigenous education programs that have the potential to change lives. We work with communities to develop programming that teaches transferable life skills proven to improve school attendance and graduation rates.</p>
-                    </div>
+                    <div dangerouslySetInnerHTML={{__html: title}} />
+                    <div className={styles.TextHighLight} dangerouslySetInnerHTML={{__html: textHighlight}} />
+                    <div className={styles.Content} dangerouslySetInnerHTML={{__html: content}} />
                     <div>
-                        <Button type="link" internal={true} href="/join-us/" text="More About Us" />
+                        <Button type="link" internal={true} href={buttonUrl} text={buttonText} />
                     </div>
                 </div>
                 

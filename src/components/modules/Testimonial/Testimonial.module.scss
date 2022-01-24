@@ -1,10 +1,6 @@
 @import "src/styles/colors";
 @import "src/styles/bp";
 .Testimonial {
-  margin-block: 100px;
-  @include sm {
-    margin-block: 50px;
-  }
   .wrap {
     max-width: 1240px;
     margin: 0 auto;

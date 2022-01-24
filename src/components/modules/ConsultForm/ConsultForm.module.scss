@@ -3,10 +3,6 @@
   & * {
     box-sizing: border-box;
   }
-  margin-bottom: 80px;
-  @include sm {
-    margin-bottom: 40px;
-  }
   .wrap {
     max-width: 1240px;
     margin-inline: auto;

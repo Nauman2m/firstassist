@@ -1,12 +1,8 @@
 @import "src/styles/colors";
 @import "src/styles/bp";
 .OurApproachTabbed {
-  margin-block: 80px;
   * {
     box-sizing: border-box;
-  }
-  @include sm {
-    margin-block: 0 40px;
   }
   .wrap {
     max-width: 1240px;
@@ -16,6 +12,7 @@
     }
     h2 {
       text-align: center;
+      margin-top: 0;
     }
     .tabNav {
       display: flex;

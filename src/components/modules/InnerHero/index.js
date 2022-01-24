@@ -1,18 +1,43 @@
+import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import { BgImage } from 'gbimage-bridge';
 import React from 'react';
 import Button from '../../common/button';
 import * as styles from './InnerHero.module.scss';
 
-const InnerHero = ({HeroBg, title, Desc}) => {
+export const fragment = graphql`
+  fragment InnerHero on WpPage_Pagesections_Sections_InnerHero {
+    bgimageoverlay
+    buttonText
+    buttonUrl
+    content
+    fieldGroupName
+    herobg {
+      altText
+      localFile {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+    }
+  }
+`;
+
+const InnerHero = (props) => {
+    const {
+        bgimageoverlay,
+        buttonText,
+        buttonUrl,
+        content,
+        herobg,
+    } = props
 
     return (
-        <BgImage className={styles.heroBg} image={getImage(HeroBg)}>
-            <div className={styles.BgImageOverlay} style={{background: 'rgba(0, 0, 0, 0.4)'}}></div>
+        <BgImage className={styles.heroBg} image={getImage(herobg?.localFile)}>
+            {bgimageoverlay && <div className={styles.BgImageOverlay} style={{background: bgimageoverlay}} />}
             <div className={styles.content}>
-                <h1>{title}</h1>
-                {Desc && <p>{Desc}</p>}
-                <Button type="link" internal={true} href="/join-us/" text="Join Us Today" />
+                <div dangerouslySetInnerHTML={{__html: content}} />
+                <Button type="link" internal={true} href={buttonUrl} text={buttonText} />
             </div>
             <div className={styles.BgImageShape}>
                 <svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" width="1943" height="98.812" viewBox="0 0 1943 98.812" preserveAspectRatio="none">

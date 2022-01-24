@@ -1,9 +1,5 @@
 @import "src/styles/bp";
 .SliderTopContentBottomImage {
-  margin-top: 80px;
-  @include sm {
-    margin-top: 40px;
-  }
   .wrap {
     max-width: 1240px;
     margin-inline: auto;

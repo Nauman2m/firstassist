@@ -3,10 +3,8 @@
 .IndigenousPrograms {
   background: #000;
   padding-block: 120px;
-  margin-block-start: 100px;
   position: relative;
   @include sm {
-    margin-block-start: 0;
     padding-top: 50px;
     padding-bottom: 80px;
   }

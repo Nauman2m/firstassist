@@ -1,8 +1,6 @@
 @import "src/styles/bp";
 .LeftContentRightImage {
-  padding-block: 0 100px;
   @include sm {
-    padding-block: 50px;
     * {
       box-sizing: border-box;
     }
@@ -25,19 +23,18 @@
         padding-inline: 15px;
         margin-top: 2em;
       }
-      h2 {
-        margin-bottom: 0.65em;
-      }
-      .TextHighLight {
-        font-weight: 700;
-        font-size: 18px;
-        margin-bottom: 10px;
-      }
-      .Content {
-        p {
-          margin-bottom: 2.5em;
+      .content {
+        h2 {
+          margin-bottom: 0.65em;
         }
+        .TextHighLight {
+          font-weight: 700;
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+        margin-bottom: 2em;
       }
+
       a {
         @include sm {
           padding-inline: 40px;

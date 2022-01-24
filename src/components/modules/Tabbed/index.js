@@ -1,7 +1,29 @@
+import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { useState } from 'react';
 import Button from '../../common/button';
 import * as styles from './OurApproachTabbed.module.scss';
+
+export const fragment = graphql`
+  fragment Tabbed on WpPage_Pagesections_Sections_Tabbed {
+    fieldGroupName
+    title
+    tabitems {
+      title
+      content
+      buttonText
+      buttonUrl
+      image {
+        altText
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+  }
+`;
 
 const Tabbed = ({tabitems, title}) => {
 
@@ -14,13 +36,13 @@ const Tabbed = ({tabitems, title}) => {
     return (
         <div className={styles.OurApproachTabbed}>
             <div className={styles.wrap}>
-                    {title}
+                    <div dangerouslySetInnerHTML={{__html: title}} />
                     <div className={styles.tabNav}>
                         {
                             tabitems.map((item, index) => {
                                 return(
                                     <div className={`${styles.btnContainer} ${CurrentItem === index ? styles.active : ''}`}>
-                                        <button onClick={() => TabChange(index)}>{item.button}</button>
+                                        <button onClick={() => TabChange(index)}>{item.title}</button>
                                     </div>
                                 )
                             })
@@ -28,13 +50,12 @@ const Tabbed = ({tabitems, title}) => {
                     </div>
                     <div className={styles.content}>
                         <div className={styles.imgContainer}>
-                            <GatsbyImage className={styles.img} image={getImage(tabitems[CurrentItem].img)} alt="" />
+                            <GatsbyImage className={styles.img} image={getImage(tabitems[CurrentItem].image.localFile)} alt={tabitems[CurrentItem].image.altText} />
                         </div>
                         <div className={styles.ContentBox}>
                             <div className={styles.box}>
-                                <h3>{tabitems[CurrentItem].title}</h3>
-                                <div dangerouslySetInnerHTML={{__html: tabitems[CurrentItem].text}} />
-                                <Button type="link" internal={true} href="/join-us/" text="Join Us Today" />
+                                <div dangerouslySetInnerHTML={{__html: tabitems[CurrentItem].content}} />
+                                <Button type="link" internal={true} href={tabitems[CurrentItem].buttonUrl} text={tabitems[CurrentItem].buttonText} />
                             </div>
                         </div>
                     </div>

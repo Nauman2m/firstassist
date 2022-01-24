@@ -74,7 +74,7 @@ let Menu = [
     }
 ]
 
-const Header = ({path}) => {
+const Header = () => {
     const [MobNavBtn, setMobNavBtn] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
     const headerRef = useRef(null);

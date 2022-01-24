@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby';
 import { gsap, TweenLite } from "gsap";
 import CSSRulePlugin from "gsap/CSSRulePlugin";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -9,8 +10,28 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-const IndigenousPrograms = () => {
+export const fragment = graphql`
+  fragment IndigenousPrograms on WpPage_Pagesections_Sections_IndigenousPrograms {
+    buttonText
+    buttonUrl
+    text
+    fieldGroupName
+    counterBoxes {
+      text
+      number
+    }
+  }
+`;
+
+const IndigenousPrograms = (props) => {
     const IndigenousPrograms = useRef(null)
+
+    const {
+        buttonText,
+        buttonUrl,
+        text,
+        counterBoxes,
+    } = props
 
     useEffect(() => {
         gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
@@ -44,53 +65,29 @@ const IndigenousPrograms = () => {
             </div>
             <div className={styles.wrap}>
                 <div className={styles.left}>
-                    <p>First Assist indigenous programs have proven to drastically reduce student absenteeism and increase school attendance, resulting in high school graduation rates on par with the national average.</p>
+                    <div dangerouslySetInnerHTML={{__html: text}} />
                     <div>
-                        <Button type="link" internal={true} href="/join-us/" text="Get Your Community or Child Involved" />
+                        <Button type="link" internal={true} href={buttonUrl} text={buttonText} />
                     </div>
                 </div>
                 <div className={styles.right}>
                     <div className={styles.CounterWrap}>
-                        <div className={styles.CounterBox}>
-                            <div className={styles.boxWrap}>
-                                <div className={`${styles.CountNumb} numcnt`}>
-                                    90
-                                </div>
-                                <div className={styles.CountText}>
-                                    National Non-Indigenous High School Graduation Rates
-                                </div>
-                            </div>
-                        </div>
-                        <div className={styles.CounterBox}>
-                            <div className={styles.boxWrap}>
-                                <div className={`${styles.CountNumb} numcnt`}>
-                                    45
-                                </div>
-                                <div className={styles.CountText}>
-                                    National Indigenous High School Graduation Rates
-                                </div>
-                            </div>
-                        </div>
-                        <div className={styles.CounterBox}>
-                            <div className={styles.boxWrap}>
-                                <div className={`${styles.CountNumb} numcnt`}>
-                                    90
-                                </div>
-                                <div className={styles.CountText}>
-                                    First Assist Indigenous Program Participants High School Graduation Rates
-                                </div>
-                            </div>
-                        </div>
-                        <div className={styles.CounterBox}>
-                            <div className={styles.boxWrap}>
-                                <div className={`${styles.CountNumb} numcnt`}>
-                                    90
-                                </div>
-                                <div className={styles.CountText}>
-                                    First Assist Indigenous Program Participants High School Graduation Rates
-                                </div>
-                            </div>
-                        </div>
+                        {
+                            counterBoxes.map((item, index) => {
+                                return(
+                                    <div className={styles.CounterBox}>
+                                        <div className={styles.boxWrap}>
+                                            <div className={`${styles.CountNumb} numcnt`}>
+                                                {item.number}
+                                            </div>
+                                            <div className={styles.CountText}>
+                                                {item.text}
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>

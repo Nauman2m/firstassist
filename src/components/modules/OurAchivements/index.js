@@ -1,10 +1,36 @@
-import { StaticImage } from "gatsby-plugin-image";
+import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from 'react';
 import BeforeHeadingText from '../../common/BeforeHeadingText';
 import * as styles from './OurAchivements.module.scss';
 
-const OurAchivements = () => {
+export const fragment = graphql`
+  fragment OurAchivements on WpPage_Pagesections_Sections_OurAchivements {
+    beforeHeadingText
+    fieldGroupName
+    title
+    gridBoxs {
+      title
+      text
+      icon {
+        altText
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+  }
+`;
 
+const OurAchivements = (props) => {
+    const {
+        beforeHeadingText,
+        title,
+        gridBoxs
+    } = props
+    
     return (
         <div className={styles.OurAchivements}>
             <div className={styles.CurveTop}>
@@ -14,46 +40,25 @@ const OurAchivements = () => {
             </div>
             <div className={styles.wrap}>
                 <div className={styles.top}>
-                    <BeforeHeadingText text="Our Achivements" />
-                    <h2 className="LightLine">Community <span>Partnership</span> Model</h2>
+                    <BeforeHeadingText text={beforeHeadingText} />
+                    <div dangerouslySetInnerHTML={{__html: title}} />
                 </div>
                 <div className={styles.gridBoxs}>
-                    <div className={styles.box}>
-                        <div className={styles.wrap}>
-                            <StaticImage src="../../../images/need-analysis.png" alt="demo-icon" />
-                            <div className={styles.content}>
-                                <h3>Needs Analysis</h3>
-                                <p>We consult with multiple local community members to identify issues impacting the community.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.box}>
-                        <div className={styles.wrap}>
-                            <StaticImage src="../../../images/Community-Consultation.png" alt="demo-icon" />
-                            <div className={styles.content}>
-                                <h3>Community Consultation</h3>
-                                <p>Alongside community leadership, we develop programming to help close gaps in health and education.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.box}>
-                        <div className={styles.wrap}>
-                            <StaticImage src="../../../images/Instructor-Community-Partnerships.png" alt="demo-icon" />
-                            <div className={styles.content}>
-                                <h3>Instructor/Community Partnerships</h3>
-                                <p>Our programs utilize mentors from outside and within the community to be sure we present programming that is culturally relevant and preserves the language and customs of the people.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.box}>
-                        <div className={styles.wrap}>
-                            <StaticImage src="../../../images/Program-Implementation.png" alt="demo-icon" />
-                            <div className={styles.content}>
-                                <h3>Program Implementation</h3>
-                                <p>We launch collaborative, meaningful sports-centered programming that is proven to create positive change within indigenous communities.</p>
-                            </div>
-                        </div>
-                    </div>
+                    {
+                        gridBoxs.map((item, index) => {
+                            return(
+                                <div key={index} className={styles.box}>
+                                    <div className={styles.wrap}>
+                                        <GatsbyImage key={index} image={getImage(item.icon.localFile)} alt={item.icon?.altText} />
+                                        <div className={styles.content}>
+                                            <h3>{item.title}</h3>
+                                            <p>{item.text}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
             </div>
             <div className={styles.CurveBottom}>

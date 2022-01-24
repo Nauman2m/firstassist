@@ -1,11 +1,10 @@
 @import "src/styles/bp";
 .MapSection {
-  padding-top: 40px;
   .sectionWrap {
     max-width: 1240px;
     margin: 0 auto;
     @include sm {
-      max-width: 90%;
+      padding-inline: 15px;
     }
     .mapWrap {
       margin-top: 80px;

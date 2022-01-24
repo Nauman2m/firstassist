@@ -19,6 +19,7 @@ export { default as OurImpact } from './OurImpact';
 export { default as OurMission } from './OurMission';
 export { default as OurVision } from './OurVision';
 export { default as SliderTopContentBottomImage } from './SliderTopContentBottomImage';
+export { default as Spacer } from './Spacer';
 export { default as Tabbed } from './Tabbed';
 export { default as TeamMembers } from './TeamMembers';
 export { default as Testimonial } from './Testimonial';
