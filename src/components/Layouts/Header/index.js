@@ -5,79 +5,33 @@ import React, { useEffect, useRef, useState } from 'react';
 import Button from '../../common/button';
 import * as styles from './header.module.scss';
 import NavList from './NavList';
-
-let Menu = [
-    {
-        "id": "cG9zdDozODQ=",
-        "label": "Home",
-        "url": "https://firstassist.ca/",
-        "parentId": null,
-        "__typename": "MenuItem",
-        "children": []
-    },
-    {
-        "id": "cG9zdDozODU=",
-        "label": "Virtual",
-        "url": "https://firstassist.ca/virtual/",
-        "parentId": null,
-        "__typename": "MenuItem",
-        "children": []
-    },
-    {
-        "id": "cG9zdDozODY=",
-        "label": "About",
-        "url": "https://firstassist.ca/about/",
-        "parentId": null,
-        "__typename": "MenuItem",
-        "children": [
-            {
-                "id": "cG9zdDo0MDE=",
-                "label": "What We Do",
-                "url": "/",
-                "parentId": "cG9zdDozODY=",
-                "__typename": "MenuItem",
-                "children": []
-            },
-            {
-                "id": "cG9zdDo0MDI=",
-                "label": "Our Mission",
-                "url": "/",
-                "parentId": "cG9zdDozODY=",
-                "__typename": "MenuItem",
-                "children": []
-            }
-        ]
-    },
-    {
-        "id": "cG9zdDozODc=",
-        "label": "Community Commitment",
-        "url": "https://firstassist.ca/community-commitment/",
-        "parentId": null,
-        "__typename": "MenuItem",
-        "children": []
-    },
-    {
-        "id": "cG9zdDozODg=",
-        "label": "Sport",
-        "url": "https://firstassist.ca/sport/",
-        "parentId": null,
-        "__typename": "MenuItem",
-        "children": []
-    },
-    {
-        "id": "cG9zdDozOD1=",
-        "label": "Join Us",
-        "url": "https://firstassist.ca/join-us/",
-        "parentId": null,
-        "__typename": "MenuItem",
-        "children": []
-    }
-]
+import { useSiteMenuData } from './useSiteMenuData';
 
 const Header = () => {
     const [MobNavBtn, setMobNavBtn] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
     const headerRef = useRef(null);
+    const menuData = useSiteMenuData();
+
+    const flatListToHierarchical = (
+		data = [],
+		{ idKey = 'id', parentKey = 'parentId', childrenKey = 'children' } = {}
+	) => {
+		const tree = [];
+		const childrenOf = {};
+		data.forEach(item => {
+			const newItem = { ...item };
+			const { [idKey]: id, [parentKey]: parentId = 0 } = newItem;
+			childrenOf[id] = childrenOf[id] || [];
+			newItem[childrenKey] = childrenOf[id];
+			parentId
+				? (childrenOf[parentId] = childrenOf[parentId] || []).push(newItem)
+				: tree.push(newItem);
+		});
+		return tree;
+	};
+
+    const primaryMenu = flatListToHierarchical(menuData?.menuItems?.nodes);
 
     const toggleMobBtn = () => {
         setMobNavBtn(state => !state);
@@ -112,7 +66,7 @@ const Header = () => {
                 </div>
                 <div className={`${styles.navContainer} ${MobNavBtn ? styles.active : ''}`}>
                     <ul>
-                        {Menu.map((item) => {
+                        {primaryMenu.map((item) => {
                             return (
                                 <NavList item={item} key={item.id} />
                             );
