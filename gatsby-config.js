@@ -15,13 +15,13 @@ module.exports = {
     gSiteVerification: ''
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        output: `/`,
-        entryLimit: 5000
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-sitemap`,
+    //   options: {
+    //     output: `/`,
+    //     entryLimit: 5000
+    //   }
+    // },
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {
