@@ -2,7 +2,7 @@ require('dotenv').config();
 const path = require(`path`)
 
 const siteUrl = process.env.GATSBY_SITE_URL;
-const siteGraphql = process.env.GATSBY_SITE_ADMIN_URL + "/graphql";
+const siteGraphql = process.env.GATSBY_SITE_ADMIN_URL2 + "/graphql";
 const googleAnalytics = process.env.GATSBY_GOOGLE_ANALYTICS;
 
 module.exports = {
@@ -43,14 +43,13 @@ module.exports = {
       resolve: "gatsby-source-wordpress",
       options: {
         url: siteGraphql,
-        useACF: true,
         html: {
           useGatsbyImage: true,
           createStaticFiles: true,
           imageMaxWidth: 1500,
         },
         develop: {
-          hardCacheMediaFiles: true,
+          hardCacheMediaFiles: false,
         },
       },
     },

@@ -10,7 +10,8 @@
   transition: background-color 0.3s;
   &.isSticky {
     position: fixed;
-    background-color: #f6f6f6;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 5px 0px #eee;
     animation-name: sticky;
     animation-duration: 0.5s;
   }
