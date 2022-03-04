@@ -2,7 +2,7 @@ require('dotenv').config();
 const path = require(`path`)
 
 const siteUrl = process.env.GATSBY_SITE_URL;
-const siteGraphql = process.env.GATSBY_SITE_ADMIN_URL2 + "/graphql";
+const siteGraphql = process.env.GATSBY_SITE_ADMIN_URL + "/graphql";
 const googleAnalytics = process.env.GATSBY_GOOGLE_ANALYTICS;
 
 module.exports = {
